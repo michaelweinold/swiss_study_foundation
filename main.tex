@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\input{./auxiliary/preamble/preamble_projects_main.tex}
+
+\usepackage[
+    backend=biber,
+    style=authoryear-comp
+]{biblatex}
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% document metadata
+\title{Summer Academy Proposal}
+\author{Michael Weinold}
+\date{2023}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\begin{figure}[]
+    \centering
+    \includegraphics[height=\textheight]{./figures/loewy_architecture.png}
+    \caption{
+        Some text here. Source: "Design Evolution 1930", \cite{loewy_industrial_1979}
+    }
+    \label{fig:combined}
+\end{figure}
+
+\newpage
+\printbibliography
+
+\end{document}
