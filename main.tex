@@ -2,6 +2,9 @@
 
 \input{./auxiliary/preamble/preamble_projects_main.tex}
 
+\usepackage{subfig}
+\usepackage{cleveref}
+
 \usepackage[
     backend=biber,
     style=authoryear-comp
@@ -11,8 +14,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % document metadata
-\title{Summer Academy Proposal}
-\author{Michael Weinold}
+\title{Proposal for a Summer Academy of the Swiss Study Foundation}
+\author{Michael Weinold, Philippe Schultheiss et al.}
 \date{2023}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,6 +36,25 @@
 \end{figure}
 
 \newpage
+
+\begin{figure}
+    \centering
+    \subfloat{{\includegraphics[height=5.5cm]{figures/Spyroidea.jpg} }}
+    \subfloat{{\includegraphics[height=5.5cm]{figures/Phaeodaria.jpg} }}
+    \subfloat{{\includegraphics[height=5.5cm]{figures/Cyrtoidea.jpg} }}
+    \caption{Selection of drawings from Ernst Haeckel's \textit{"Kunstformen der Natur" (en.: "Art Forms in Nature")} \cite{haeckel_kunstformen_2012}. According to Rene Binet, drawings like these served as inspiration for his monumental arch \cite[Sec. "Haeckel und der Jugendstil"]{willmann_haeckel_2019}, which is depicted in \cref{fig:arch}. Image sources from left to right: Spyroidea \cite{haeckel_kunstformen_1904}, Phaeodaria \cite{haeckel_kunstformen_1904} and Cyrtoidea \cite{haeckel_kunstformen_1904-2} by Ernst Haeckel.}
+    \label{fig:kunstformen}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \subfloat{{\includegraphics[height=4cm]{figures/porte_photograph.jpg} }}
+    \subfloat{{\includegraphics[height=4cm]{figures/porte_watercolor.jpg} }}
+    \caption{Two renderings of the \textit{"Porte Binet"}, a monumental gate designed by Rene Binet for the 1900 Paris Exposition. Image sources: Photograph by Larger \cite{louis_porte_1900} and watercolor on paper by Binet \cite{binet_projet_1898}.}
+    \label{fig:arch}
+\end{figure}
+
+\clearpage
 \printbibliography
 
 \end{document}
