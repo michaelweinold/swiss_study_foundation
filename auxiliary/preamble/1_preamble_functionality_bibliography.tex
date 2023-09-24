@@ -1,0 +1,20 @@
+% show DOI URL (https://doi.org/XXX.XXXXX.XXXX), instead of publisher URL (https://springer.com/XXXX)
+% cf. https://tex.stackexchange.com/a/616241
+\DeclareSourcemap{
+  \maps[datatype = bibtex]{
+    \map{
+      \step[notfield = keywords, final]
+      \step[fieldsource = doi, final]
+      \step[fieldset = url, null]
+    }
+    \map{
+      \step[fieldsource = keywords, notmatch = \regexp{\bprimary\b}, final]
+      \step[fieldsource = doi, final]
+      \step[fieldset = url, null]
+    }
+  }
+}
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}

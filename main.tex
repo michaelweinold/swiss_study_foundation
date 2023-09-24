@@ -1,22 +1,25 @@
 \documentclass{article}
 
-\input{./auxiliary/preamble/preamble_projects_main.tex}
-
-\usepackage{subfig}
-\usepackage{cleveref}
+\input{./auxiliary/preamble/1_preamble_functionality_main.tex}
+\input{./auxiliary/preamble/2_preamble_layout_report.tex}
 
 \usepackage[
     backend=biber,
-    style=authoryear-comp
+    style=ieee
 ]{biblatex}
 \addbibresource{references.bib}
+\input{./auxiliary/preamble/1_preamble_functionality_bibliography.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % document metadata
-\title{Proposal for a Summer Academy of the Swiss Study Foundation}
-\author{Michael Weinold, Philippe Schultheiss et al.}
-\date{2023}
+\title{Proposal for a Summer Academy \protect\\ of the Swiss Study Foundation}
+\author{Michael P. Weinold$^1$, Philippe Schultheiss$^1$, Mark C. Ballandies$^2$}
+\date{
+    $^1$Schweizerische Studienstiftung \\
+    $^2$Studienstiftung des Deutschen Volkes \\[3mm]
+    October 2023
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,47 +27,63 @@
 
 \maketitle
 
-\section{Authors}
+\section*{\centering Authors}
 
-Michael Weinold is a doctoral researcher at ETH Zurich and the Paul Scherrer Institute. With a background in physics, his academic research has been centered around accelerating innovation in clean-energy technologies. For his doctoral research project, he is improving the mathematical modeling of life-cycle assessment methods. A student of history and enthusiastic draftsman, he XXXX. Originally from Innsbruck, Austria.
+\textbf{\textit{Michael P. Weinold}} (born 1995 in Innsbruck, Austria) is a doctoral researcher at ETH Zurich and Paul Scherrer Institute. His research is focused on accelerating innovation in clean-energy technologies. He has a  background in engineering physics.
 
-Philippe Schultheiss is a philosopher who is currently training to become a priest with the reformed church of Zurich. 
+\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) was formally trained in philosophy and economics at the universities of Basel and Fribourg. He presently works as an independent consultant, coach and author. At the same time, he is the President of the Parliament of Europe's largest church community since 2020, alongside pursuing theology studies at the University of Zurich since fall 2021. 
 
-Mark Christopher Ballandies is a crypto whale.
+\textbf{\textit{Mark C. Ballandies}} (born 1991 in Burgwedel, Germany) is a postdoctoral researcher at the Department of Computational Social Sciences at ETH Zurich. His research is focused on utilising emerging digital technologies to promote more participatory forms of democracy. He has a background in Computational Science and Engineering.
 
-\section{Abstract}
+\textit{"[Architecture] (...) is the most overweening of the arts, and the one that least lets us alone. A gallery we can't walk out of, a book we can't close, an art we can't even turn our back on because it is there facing us on the other side of the street as well (...)} - British poet Blake Morrison in "Lords of glass, steel and concrete" \cite{morrison_lords_1982}
 
-We must reduce global carbon emissions dramatically. The construction sector is responsible for XX\% of annual global carbon emissions. In Switzerland, it accounts for XX\% of carbon emissions (including imported carbon). This number is expected to increase to XX\% in 2050, due to strong immigration.
-What is more, the construction sector is notoriously difficult to decarbonise. Together with certain heavy industry sectors and aviation, it is classified as a "hard to abate" sector.
-Work is ongoing on decreasing the carbon footprint of building during the construction phase and during the use phase. This includes novel methods for cement, concrete and steel production or the increasing digitisation of buildings ("smart home"). However, there are currently no efforts to increase the lifetime of buildings. In Switzerland, like in the surrounding EU countries, average building lifetime is around 50 years only.
-The carbon emissions incurred during new construction of a building vs the refurbishment can be recouped over a period of between XX-XX years. Studies exist for the nordic countries, where the energy cost of non-refurbished buildings is highest. Average building lifetimes are between 50 years (France, with source) and 60 years (Switzerland, with source).
-Despite efforts to improve recycling in construction, recycling rate of modern building materials (steel, concrete, glass) remains low (check for source).
-[Figure from Crawford on cumulative embodied energy]
-At the same time, changing use requirements meet the modernist credo "form follows function". Changing family structures mean that apartments can be ever more compact.
-All this amounts to large scale new construction, the majority of which is in the 'modernist' or contemporary style.
-Every poll to date has shown that this style is at the very least moderately unpopular with people. Empirical evidence is mounting, thereby providing proof for something that has been well-known to the general public for a long time: "Why is the Modern World So Ugly?" (Alain de Boton)
-
-
-
-
-A key reason for the short lifetime of buildings is the 
-
+\clearpage
 \tableofcontents
 
-\section{Introduction}
+\section{\centering Abstract}
 
-\begin{figure}[]
-    \centering
-    \includegraphics[height=\textheight]{./figures/loewy_architecture.png}
+\begin{minipage}{0.55\textwidth}
+    We must reduce global carbon emissions dramatically. The construction sector is responsible for XX\% of annual global carbon emissions. In Switzerland, it accounts for XX\% of carbon emissions (including imported carbon). This number is expected to increase to XX\% in 2050, due to strong immigration.
+    
+    What is more, the construction sector is notoriously difficult to decarbonise. Together with certain heavy industry sectors and aviation, it is classified as a "hard to abate" sector.
+    
+    Work is ongoing on decreasing the carbon footprint of building during the construction phase and during the use phase. This includes novel methods for cement, concrete and steel production or the increasing digitisation of buildings ("smart home"). However, there are currently no efforts to increase the lifetime of buildings. In Switzerland, like in the surrounding EU countries, average building lifetime is around 50 years only.
+    
+    The carbon emissions incurred during new construction of a building vs the refurbishment can be recouped over a period of between XX-XX years. Studies exist for the nordic countries, where the energy cost of non-refurbished buildings is highest. Average building lifetimes are between 50 years (France, with source) and 60 years (Switzerland, with source).
+    
+    Despite efforts to improve recycling in construction, recycling rate of modern building materials (steel, concrete, glass) remains low (check for source).
+    
+    [Figure from Crawford on cumulative embodied energy]
+    
+    At the same time, changing use requirements meet the modernist credo "form follows function". Changing family structures mean that apartments can be ever more compact.
+    
+    All this amounts to large scale new construction, the majority of which is in the 'modernist' or contemporary style.
+    
+    Every poll to date has shown that this style is at the very least moderately unpopular with people. Empirical evidence is mounting, thereby providing proof for something that has been well-known to the general public for a long time: "Why is the Modern World So Ugly?" (Alain de Boton)
+
+\end{minipage}\hspace{15mm}
+\begin{minipage}{0.2\textwidth}
+    \begin{figure}[H]
+    \includegraphics[width=50mm]{./figures/loewy_architecture.png}
     \caption{
-        Some text here. Source: "Design Evolution 1930", \cite{loewy_industrial_1979}
+        "Design Evolution 1930" by French-born American industrial designer Raymond Loewy \cite{loewy_industrial_1979}
     }
-    \label{fig:combined}
-\end{figure}
+    \label{fig:loewy}
+    \end{figure}
+\end{minipage}
 
-\section{Scope of the Discussion}
+\clearpage
+\section{Context}
+
+\section{Construction and Climate Change}
+
+\section{Construction and Aesthetics}
 
 Modern architecture is always ugly. Nonetheless, we limit our discussion to buildings of a representative nature. We exclude housing (eg. apartment complexes) to avoid:
+
+\section{Proposed Agenda}
+
+\section{Proposed Speakers}
 
 \section{Scattered Thoughts}
 
@@ -77,7 +96,7 @@ However, some aspects should be really simple: "don't design houses for a 50 yea
 
 \section{Aesthetics}
 
-\textit{"[Architecture] (...) is the most overweening of the arts, and the one that least lets us alone. A gallery we can't walk out of, a book we can't close, an art we can't even turn our back on because it is there facing us on the other side of the street as well (...)} - British poet Blake Morrison in "Lords of glass, steel and concrete" \cite{morrison_lords_1982}
+
 
 \section{Connecting Aesthetics and Sustainability}
 
