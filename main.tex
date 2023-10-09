@@ -10,6 +10,29 @@
 \addbibresource{references.bib}
 \input{./auxiliary/preamble/1_preamble_functionality_bibliography.tex}
 
+\usepackage{tikz}
+
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % document metadata
@@ -289,14 +312,21 @@ church architecture as case study of representative architecture
 Hundertwasser - how to include him?
 
 
-\subsection{Day 2: Sustainability in the Built Environment}
+\subsection{DAY II - Sustainability in the Built Environment}
 
-Pending recommendations by Romain Sacchi and Xiaojin Zhang.
-I could also ask Martin Röck if he can either recommend someone or if he wants to take part himself.
-Could be someone from ETH, as long as they're interesting enough.
-We could do some simple LCA calculations (using Brightway Live) to show the differences between
-3
-\subsection{Day 3: Biophilic Design}
+\begin{NiceTabular}{W{l}{2cm}l}[]
+\textit{Instructors} & Dr. Martin Röck, Dr. Romain Sacchi (assisted by Michael Weinold) \\
+\textit{Format} & Computer-Based Interactive "Sustainability Lab" Group Work \end{NiceTabular}
+
+\textit{What is the environmental impact of a concrete-and-steel building? How does it fare against a clay-and brick building with wood beams and hemp insulation? How complex is a full life-cycle analysis of a construction project? Do we need expensive reports prepared by sustainability consultants, or can we a reasonable assessment ourselves? Where in the supply chain do emissions occur - which can we avoid and which will take decades to be fully decarbonized? The participants will learn about the fundamentals of environmental assessment and complete an interactive life-cycle analysis of two case-studies.}
+
+\href{https://www.linkedin.com/in/martinroeck/}{Dr. Martin Röck \ExternalLink} is a research associate at Delft University of Technology (Netherlands), where he has been developing a large-scale database of the embodied carbon in the European building stock.\footnote{Embodied-Carbon-of-European-Buildings-Database (EU-ECB-DB), \href{https://github.com/mroeck/Embodied-Carbon-of-European-Buildings-Database}{\texttt{https://github.com/mroeck/}}} His research is focused on  on improving climate and environmental performance of buildings at scale. He applies life cycle-based assessment methods, building information modelling and data science workflows to inform environmental benchmarking and target setting as well as to identify and promote effective building design strategies for advancing a regenerative development of spatial systems at large. Martin holds a Dual PhD in Architectural Engineering from KU Leuven and Engineering Sciences from TU Graz for which he has been awarded a DOC Fellowship by the Austrian Academy of Sciences.
+
+\href{https://www.linkedin.com/in/romainsacchi/}{Dr. Romain Sacchi \ExternalLink} is a tenured researcher in the Technology Assessment Group at  Paul Scherrer Institute (Switzerland). During his postdoctoral research, he developed a powerful mathematical model for prospective environmental modelling that is now used widely in academia and industry. Before returning to academia, he gathered six years of experience in the environmental impact assessment of the construction sector, where he developed sustainability strategies.
+
+\subsection{DAY III - Quantifying Aesthetics}
+
+
 
 Neuroscience: https://colinellard.com/
 
