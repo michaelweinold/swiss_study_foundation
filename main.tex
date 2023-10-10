@@ -10,9 +10,13 @@
 \addbibresource{references.bib}
 \input{./auxiliary/preamble/1_preamble_functionality_bibliography.tex}
 
+\renewcommand{\contentsname}{\centering Contents} % https://tex.stackexchange.com/a/308207
+\usepackage[titles, subfigure]{tocloft} % https://tex.stackexchange.com/a/336618
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % https://tex.stackexchange.com/a/271942
+
+
 \usepackage{tikz}
 
-\setcounter{secnumdepth}{0} % no numbers in section headings
 
 \newcommand{\ExternalLink}{%
     \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
@@ -56,12 +60,14 @@
 
 \textbf{\textit{Michael P. Weinold}} (born 1995 in Innsbruck, Austria) is a doctoral researcher at ETH Zurich and the Paul Scherrer Institute. His background is in engineering physics, with degrees from Vienna University of Technology and ETH Zurich. His current research is focused on accelerating innovation in novel clean-energy technologies. He builds mathematical models and open-source software to better help decision makers assess the environmental impact of different techno-economic scenarios for decarbonizing the economy. Since 2023, he is a guest lecturer at the Department of Mechanical Engineering of ETH Zurich, where he teaches the introductory unit of the lecture series on \textit{Sustainability and Management of Air Transport}. His interest in aesthetics in the built environment was sparked during his research at the University of Cambridge, where he was introduced to the legacy of the late British philosopher Sir Roger Scruton. Since that time, he has been most interested in how new neuro-scientific insights can enable citizen movements to positively shape public spaces.
 
-\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) is a consultant and future pastor in the Swiss Reformed Church. He holds an undergraduat degrees in Business \& Economics from the university of Basel as well as a master's degree in Philosophy from the university of Freiburg i.Ue. He is now an alumnus of the Swiss Study Foundation, where he is still engaged as a member of the Assessment Jury as well as a frequent co-organizer of events. He has been interested in politics, especially the areas of environmental and urban planning, since his days at the cantonal school at Schaffhausen. He went on to co-found the Green-Liberal Party in the canton of Schaffhausen and remained involved in local politics after his relocation to Zurich, where, in 2020, he was elected president of the Parliament of the Reformed Church Zurich. This community of more than 70'000 members administers dozens of church buildings. Some of those buildings are already repurposed, and many more of them are expected to find new usages. He is highly motivated to contribute to a prospective and socially beneficial real estate strategy.
+\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) is a consultant and soon-to-be pastor in the Swiss Reformed Church. He holds an undergraduat degrees in Business \& Economics from the university of Basel as well as a master's degree in Philosophy from the university of Freiburg i.Ue. He is now an alumnus of the Swiss Study Foundation, where he is still engaged as a member of the Assessment Jury as well as a frequent co-organizer of events. He has been interested in politics, especially the areas of environmental and urban planning, since his days at the cantonal school at Schaffhausen. He went on to co-found the Green-Liberal Party in the canton of Schaffhausen and remained involved in local politics after his relocation to Zurich, where, in 2020, he was elected president of the Parliament of the Reformed Church Zurich. This community of more than 70'000 members administers dozens of church buildings. Some of those buildings have already repurposed, and many more of them are expected to find new usages. Hence his motivation to contribute to a prospective and socially beneficial real estate strategy.
 
 \textbf{\textit{Mark C. Ballandies}} (born 1991 in Burgwedel, Germany) is a postdoctoral researcher at the Department of Computational Social Sciences at ETH Zurich. His research is focused on utilising emerging digital technologies to promote more participatory forms of democracy. He has a background in Computational Science and Engineering.
 
 
 \clearpage
+
+\tableofcontents
 
 \section*{\centering Administrative Information}
 
@@ -79,14 +85,17 @@ Mark C. Ballandies & \texttt{markballandies@googlemail.com} & \texttt{+41 78 899
 1 & 12.10.2023 & \texttt{c57f656} & First full draft, sent out for feedback to PS and MCB
 \end{NiceTabularX}
 
-\section*{\centering Description of Contents}
+\section*{\centering Foreword}
 
+The present proposal has been a long time in the making. The idea was born back in October 2021 when the Swiss Study Foundation first opened a call for proposals for the Summer Academies. Only now did all of the authors find the time to commit to the time-consuming creative process that was still required to frame the topic, select potential speakers and draft a schedule for the event.
 
+During the development this proposal, the authors deemed it necessary to collect their thoughts in a structured way. While the authors are aware that the call for proposals from August 2023 only called for a short description of the contents, they decided to embed this into a document providing additional context. The authors further believe the topic of this proposal is not only timely but of an international scope. English has therefore been adopted as the working language of the proposal.
 
-\tableofcontents
+\cref{sec:construction} - \cref{sec:biophilic} provide the context which has inspired the authors to develop the present proposal. A concise formulation is additionally provided in \cref{sec:abstract}. The proposed schedule as well as additional information on the associated speakers is listed in \cref{sec:schedule}. 
 
 \clearpage
 \section{\centering Abstract}
+\label{sec:abstract}
 
 \begin{minipage}{0.55\textwidth}
 
@@ -294,6 +303,7 @@ In fact, we can observe that there is a kind of self-propagating effect: archite
 
 \clearpage
 \section{A New Age of Biophilic Design}
+\label{sec:biophilic}
 
 \begin{multicols}{2}
 
@@ -348,6 +358,8 @@ It is in this context that we propose a schedule to host a Summer Academy. We be
 
 \clearpage
 \section{Proposed Schedule}
+\label{sec:schedule}
+
 \subsection{Day I: History of Architecture}
 
 \begin{NiceTabular}{W{l}{3cm}l}[]
