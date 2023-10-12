@@ -10,39 +10,16 @@
 \addbibresource{references.bib}
 \input{./auxiliary/preamble/1_preamble_functionality_bibliography.tex}
 
+\input{./auxiliary/preamble/4_preamble_tikz_symbols}
+
 \renewcommand{\contentsname}{\centering Contents} % https://tex.stackexchange.com/a/308207
 \usepackage[titles, subfigure]{tocloft} % https://tex.stackexchange.com/a/336618
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % https://tex.stackexchange.com/a/271942
 
-
-\usepackage{tikz}
-
-
-\newcommand{\ExternalLink}{%
-    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
-        \begin{scope}[x=1ex, y=1ex]
-            \clip (-0.1,-0.1) 
-                --++ (-0, 1.2) 
-                --++ (0.6, 0) 
-                --++ (0, -0.6) 
-                --++ (0.6, 0) 
-                --++ (0, -1);
-            \path[draw, 
-                line width = 0.5, 
-                rounded corners=0.5] 
-                (0,0) rectangle (1,1);
-        \end{scope}
-        \path[draw, line width = 0.5] (0.5, 0.5) 
-            -- (1, 1);
-        \path[draw, line width = 0.5] (0.6, 1) 
-            -- (1, 1) -- (1, 0.6);
-        }
-    }
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % document metadata
-\title{Proposal for a Summer Academy}
+\title{Proposal for a Summer Academy \protect\\ on Biophilic Design in Architecture}
 \author{Michael P. Weinold$^1$, Philippe Schultheiss$^1$, Mark C. Ballandies$^2$}
 \date{
     $^1$Schweizerische Studienstiftung \\
@@ -58,14 +35,11 @@
 
 \section*{\centering Authors}
 
-\textbf{\textit{Michael P. Weinold}} (born 1995 in Innsbruck, Austria) is a doctoral researcher at ETH Zurich and the Paul Scherrer Institute. His background is in engineering physics, with degrees from Vienna University of Technology and ETH Zurich. His current research is focused on accelerating innovation in novel clean-energy technologies. He builds mathematical models and open-source software to better help decision makers assess the environmental impact of different techno-economic scenarios for decarbonizing the economy. Since 2023, he is a guest lecturer at the Department of Mechanical Engineering of ETH Zurich, where he teaches the introductory unit of the lecture series on \textit{Sustainability and Management of Air Transport}. His interest in aesthetics in the built environment was sparked during his research at the University of Cambridge, where he was introduced to the legacy of the late British philosopher Sir Roger Scruton. Since that time, he has been most interested in how new neuro-scientific insights can enable citizen movements to positively shape public spaces.
+\textbf{\textit{Michael P. Weinold}} (born 1995 in Innsbruck, Austria) is a doctoral researcher at ETH Zurich and the Paul Scherrer Institute. His background is in engineering physics, with degrees from Vienna University of Technology and ETH Zurich. His current research is focused on accelerating innovation in novel clean-energy technologies. He builds mathematical models and open-source software to better help decision makers assess the environmental impact of different techno-economic scenarios for decarbonizing the economy. Since 2023, he is a guest lecturer at the Department of Mechanical Engineering of ETH Zurich. His interest in aesthetics in the built environment was sparked during his research at the University of Cambridge, where he was introduced to the legacy of the late British philosopher Sir Roger Scruton. Since that time, he has been most interested in how new neuro-scientific insights can enable citizen movements to positively shape public spaces.
 
-\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) is a consultant and soon-to-be pastor in the Swiss Reformed Church. He holds an undergraduat degrees in Business \& Economics from the university of Basel as well as a master's degree in Philosophy from the university of Freiburg i.Ue. He is now an alumnus of the Swiss Study Foundation, where he is still engaged as a member of the Assessment Jury as well as a frequent co-organizer of events. He has been interested in politics, especially the areas of environmental and urban planning, since his days at the cantonal school at Schaffhausen. He went on to co-found the Green-Liberal Party in the canton of Schaffhausen and remained involved in local politics after his relocation to Zurich, where, in 2020, he was elected president of the Parliament of the Reformed Church Zurich. This community of more than 70'000 members administers dozens of church buildings. Some of those buildings have already repurposed, and many more of them are expected to find new usages. Hence his motivation to contribute to a prospective and socially beneficial real estate strategy.
+\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) is a consultant and soon-to-be pastor in the Swiss Reformed Church. He holds an undergraduat degrees in Business \& Economics from the university of Basel as well as a master's degree in Philosophy from the university of Freiburg i.Ue. He is now an alumnus of the Swiss Study Foundation, where he is still engaged as a member of the Assessment Jury as well as a frequent co-organizer of events. He has been interested in politics, especially the areas of environmental and urban planning, since his days at the cantonal school at Schaffhausen. He went on to co-found the Green-Liberal Party in his home canton and remained involved in local politics after his relocation to Zurich, where, in 2020, he was elected president of the Parliament of the Reformed Church Zurich. This community of more than 70'000 members administers dozens of church buildings. Hence his motivation to contribute to a prospective and socially beneficial real estate strategy.
 
-\textbf{\textit{Mark C. Ballandies}} (born 1991 in Burgwedel, Germany) is a postdoctoral researcher in the Computational Social Science group at ETH Zurich, where he is exploring decentralised, bottom-up and community-owned solutions to complex challenges, which he is putting into practice with WiHi, a decentralised physical infrastructure network (DePIN) that uses web3 to improve weather and climate predictions. Here he investigates how value-sensitive design - the early incorporation of stakeholder values into the system design process - influences cryptoeconomic incentives and human behaviour.
-He is co-founder of DAOSuisse, lecturer at the Vorarlberg University of Applied Sciences, alumnus of the Foundation of German Business, president of education matters e.V., member of the dcent group, initiator of the Smarte Dörfer association.
-Mark discovered the beauty of old farmhouses and their effectiveness in combating environmental challenges when he began restoring a half-timbered house from 1870 in 2019, using ecological, locally sourced and recyclable building materials such as wood, clay and hemp. He found that these farmhouses integrate values such as circularity, sustainability and locality into all aspects and details of their design and construction, resulting in unique, sustainable and liveable architectural works. This discovery inspires him in his daily work, which he enjoys sharing with others.
-
+\textbf{\textit{Mark C. Ballandies}} (born 1991 in Burgwedel, Germany) is a postdoctoral researcher in the Computational Social Science group at ETH Zurich, where he is exploring decentralised, bottom-up and community-owned solutions to complex societal challenges. In addition, he is involved in the startup WiHi that uses a decentralized network of stations to improve weather and climate predictions. He is the co-founder of DAOSuisse, a lecturer at the Vorarlberg University of Applied Sciences, an alumnus of the Foundation of German Business, president of education matters e.V. and initiator of the Smarte Dörfer association. In 2019, Mark discovered the beauty of old farmhouses and their effectiveness in combating environmental challenges when he began restoring a half-timbered house in his home village, using ecological, locally sourced and recyclable building materials such as wood, clay and hemp. He found that these farmhouses integrate values such as circularity, sustainability and locality into all aspects and details of their design and construction, resulting in unique, sustainable and liveable architecture. This discovery inspires him in his daily work, which he enjoys sharing with others.
 
 \clearpage
 
@@ -89,11 +63,11 @@ Mark C. Ballandies & \texttt{markballandies@googlemail.com} & \texttt{+41 78 899
 
 \section*{\centering Foreword}
 
-The present proposal has been a long time in the making. The idea was born back in October 2021 when the Swiss Study Foundation first opened a call for proposals for the Summer Academies. Only now did all of the authors find the time to commit to the time-consuming creative process that was still required to frame the topic, select potential speakers and draft a schedule for the event.
+The present proposal has been a long time in the making. The idea was born back in October 2021 when the Swiss Study Foundation first opened a call for proposals its annual Summer Academies. Only now did all of the authors find the time to commit to the time-consuming creative process that was still required to frame the topic, select potential speakers and draft a schedule for the event.
 
 During the development this proposal, the authors deemed it necessary to collect their thoughts in a structured way. While the authors are aware that the call for proposals from August 2023 only called for a short description of the contents, they decided to embed this into a document providing additional context. The authors further believe the topic of this proposal is not only timely but of an international scope. English has therefore been adopted as the working language of the proposal.
 
-\cref{sec:construction} - \cref{sec:biophilic} provide the context which has inspired the authors to develop the present proposal. A concise formulation is additionally provided in \cref{sec:abstract}. The proposed schedule as well as additional information on the associated speakers is listed in \cref{sec:schedule}. 
+A concise description of the academy and the associated societal and academic context is provided in \cref{sec:abstract}. Further details and related resources are listed in \cref{sec:construction} - \cref{sec:biophilic}, which provide the context which has inspired the authors to develop the present proposal. The proposed schedule as well as additional information on the associated speakers is listed in \cref{sec:schedule}. 
 
 \clearpage
 \section{\centering Abstract}
@@ -377,7 +351,7 @@ It is in this context that we propose a schedule to host a Summer Academy. We be
 \subsection{DAY II - Sustainability in the Built Environment}
 
 \begin{NiceTabular}{W{l}{3cm}l}[]
-\textit{Primary Instructor} & Dr. Martin Röck, Dr. Romain Sacchi and Michael P. Weinold \\
+\textit{Primary Instructor} & Dr. Martin Röck and Michael P. Weinold \\
 \textit{Teaching Assistant} & Mark C. Ballandies \\
 \textit{Didactic Format} & Computer-Based Interactive "Sustainability Lab" Group Work
 \end{NiceTabular}
@@ -386,7 +360,11 @@ It is in this context that we propose a schedule to host a Summer Academy. We be
 
 \href{https://www.linkedin.com/in/martinroeck/}{Dr. Martin Röck \ExternalLink} is a research associate at Delft University of Technology (Netherlands), where he has been developing a large-scale database of the embodied carbon in the European building stock.\footnote{Embodied-Carbon-of-European-Buildings-Database (EU-ECB-DB), \href{https://github.com/mroeck/Embodied-Carbon-of-European-Buildings-Database}{\texttt{https://github.com/mroeck/}}} His research is focused on  on improving climate and environmental performance of buildings at scale. He applies life cycle-based assessment methods, building information modelling and data science workflows to inform environmental benchmarking and target setting as well as to identify and promote effective building design strategies for advancing a regenerative development of spatial systems at large. Martin holds a Dual PhD in Architectural Engineering from KU Leuven and Engineering Sciences from TU Graz for which he has been awarded a DOC Fellowship by the Austrian Academy of Sciences.
 
+\begin{comment}
+
 \href{https://www.linkedin.com/in/romainsacchi/}{Dr. Romain Sacchi \ExternalLink} is a tenured researcher in the Technology Assessment Group at  Paul Scherrer Institute (Switzerland). During his postdoctoral research, he developed a powerful mathematical model for prospective environmental modelling that is now used widely in academia and industry. Before returning to academia, he gathered six years of experience in the environmental impact assessment of the construction sector, where he developed sustainability strategies.
+
+\end{comment}
 
 \subsection{DAY III - Measuring Beauty}
 \label{subsec:day_3}
@@ -401,8 +379,6 @@ It is in this context that we propose a schedule to host a Summer Academy. We be
 
 \href{https://www.linkedin.com/in/alexandros-a-lavdas-9b127518/}{Dr. Alexandros A. Lavdas \ExternalLink} is a tenured senior researcher at Eurac Research Institute for Biomedicine in Bolzano (Italy), where an imaging laboratory was set up under his guidance in 2014. He is among the most well-known researchers in neuro-aesthetics, having recently proposed a seminal method for the quantitaive measurement of architectural beauty \cite{lavdas_architectural_2022} (compare also \cref{fig:heatmap}). His research enables cell-level imaging that is fundamental for a better understanding of processes and mechanisms, both with regard to the emergence and development of diseases and the effect of drugs. He was previously with University College London, where he carried out research on cortical development, and later, at the Pasteur Institute in Athens, on injury and repair of the central nervous system.
 
-
-
 \subsection{DAY IV - A Return to Nature}
 
 \begin{NiceTabular}{W{l}{3cm}l}[]
@@ -415,15 +391,22 @@ It is in this context that we propose a schedule to host a Summer Academy. We be
 
 \href{https://www.linkedin.com/in/carlobattisti/}{Carlo Battisti \ExternalLink} is the president of \href{https://www.living-future.eu}{\textit{Living Future Europe} \ExternalLink}, a non-profit organization that promotes biophilic design and regenerative development. He is also the founder and leader of the Biophilic Society, a network of biophilic design lovers and professionals. From 2017-2021, he was working with Eurac Research Institute in Bolzano, Italy as Chair and Project Manager of the EU COST Action 16114 "RESTORE" (REthinking Sustainability TOwards a Regenerative Economy). The aim of this research project was to affect a paradigm shift towards restorative sustainability for new and existing buildings and space design across Europe, through the collaboration of 160+ researchers from 40 European countries. He has a degree in Civil Engineering from the Polytechnic University of Milan and about twenty years of experience in construction companies.
 
-\subsection{DAY V - Bringing it all together...}
+\subsection{DAY V - Architecture and Democracy}
 
-The schedule for this day will be determined as soon as the majority of the proposed speakers have confirmed their attendance. It would be desirable to combine the ideas developed during the past days in preparation for the field trip scheduled for days VI-VII.
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Michael Diamant \\
+\textit{Teaching Assistant} & Mark C. Ballandies \\
+\textit{Didactic Format} & Lecture and Discussion Groups
+\end{NiceTabular}
 
-\clearpage
+\textit{How can citizens increase the degree of aesthetic autonomy in a time when the vast majority of building projects are commissioned by multinational financial corporations? How can the unique Swiss implementation of direct democracy be utilized to create more more stustainable, more beautiful and more livable places? In this session, the participants will have the opportunity to engage with someone who has already used citizen action to stop urban construction projects and "force achitects back to the drawing board" \cite{natalia_michael_2021}.}
+
+\href{https://newtrad.org/aboutme/}{Michael Diamant \ExternalLink} is a Swedish urban sociologist and activist who has created and promoted several online platforms for new traditional architecture and urbanism. He has a degree in society planning from Stockholm University. He is the founder of the blog \href{https://newtrad.org/}{New Traditional Architecture \ExternalLink}, as well as the co-founder of \href{https://www.arkitekturupproret.se}{Arkitekturupporet \ExternalLink} (en.: architecture revolt), a nonprofit organization that has  transformed the debate about architecture in Sweden, and spawned multiple local groups in Norway, Finland, Denmark, and other countries. He is a leading voice in the global movement for architectural reform and revival.
+
 \subsection{DAYS VI-VII - Field Work}
 
 \begin{NiceTabular}{W{l}{3cm}l}[]
-\textit{Primary Instructor} & Dr. Alexandros A. Lavdas and Aladar Tepelea \\
+\textit{Primary Instructor} & Dr. Alexandros A. Lavdas with tech. assistance from Aladar Tepelea \\
 \textit{Teaching Assistant} & Michael P. Weinold, Philippe Schultheiss, Mark C. Ballandies \\
 \textit{Didactic Format} & Field-Trip with interactive Experiment and Data Analysis
 \end{NiceTabular}
@@ -434,7 +417,7 @@ For the vita of Dr. Alexandros A. Lavdas, compare \cref{subsec:day_3}.
 
 \href{https://www.linkedin.com/in/aladar-tepelea/}{Aladar Tepelea \ExternalLink} is an Austrian entrepreneur who manages two information technology startups. He has a background in business from Vienna University of Economics as well as extensive work experience with the foremost financial institutions in the United States and in Europe. His company \href{https://www.mindset-technologies.at}{\textit{Mindset Technologies} \ExternalLink} has developed eye-tracking software that can be used to "predict attention" in a number of different environments. The equipment is highly mobile and has already been used to understand where airline pilots focus their attention in the cockpit. With slight modifications, it can be used to re-create the experiments of Dr. Lavdas in a field experiment. 
 
-\begin{figure}
+\begin{figure}[ht!]
     \centering
     \subfloat{{\includegraphics[height=5cm]{figures/milano_old.jpg} }}
     \subfloat{{\includegraphics[height=5cm]{figures/milano_ugly.jpg} }}
