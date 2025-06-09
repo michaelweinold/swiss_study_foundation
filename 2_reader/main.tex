@@ -33,11 +33,10 @@
 
 \includepdf[pages=1-2]{figures/cover.pdf}
 
-\maketitle
-
-\section*{\centering Authors}
-\vspace{-10mm}
-
+% https://tex.stackexchange.com/a/244104/
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-1.2cm,yshift=+3.2cm] at (current page.south east) {\includegraphics[height=8cm]{./figures/dandelion.jpg}};
+\end{tikzpicture}
 \begin{tikzpicture}[remember picture, overlay]
     \node[xshift=-10.3cm, yshift=+0.75cm, font=\small] at (current page.south east) {\textit{two dandelions of the genus Taraxacum, most often associated with the archetype of flowers springing from concrete}};
 \end{tikzpicture}
@@ -62,7 +61,7 @@ Mark C. Ballandies & \texttt{bcmark@protonmail.com} & \texttt{+41 78 899 87 85}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{./figures/books.jpg}
+  \includegraphics[width=0.4\textwidth]{./figures/books.jpg}
 \end{figure}
 
 \tableofcontents
@@ -86,19 +85,16 @@ We propose to invite a group of speakers that, through their academic or profess
 \clearpage
 \section{Architecture History}
 
-\subsection{Ornament and Crime (Adolf Loos)}
+\begin{mdframed}[linewidth=1pt, roundcorner=5pt, innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=10pt, innerbottommargin=10pt, linecolor=black, backgroundcolor=white, userdefinedwidth=\textwidth]
+    To better understand the intellectual dimension of the early modern movement against traditional architecture, it is essential to examine the writings and theories of its key figures, particularly those who challenged the prevailing aesthetic norms. Perhaps most well known among those is \textit{Ornament und Verbrechen} \cite{loos_ornament_1908} (en: "Ornament and Crime"). This short essay was originally delivered as a lecture to the Vienna-based \textit{Akademischer Verband fur Literatur und Musik} on 21 January 1910 by Austrian architect Adolf Loos. His most well-known work in Vienna, the mixed-use \textit{Looshaus}, stands in stark contrast to the famous \textit{Secessionsgebäude} completed only some 20 years earlier. With it, Loos pioneered the use of reinforced concrete in an otherwise brick-built city. A controversial design, even in its own time, it famously omitted the lavish ornamental decorations otherwise used on both representative and residential buildings of the city. \cref{fig:caricature_loos} shows a contemporary caricature speculating on Loos' inspiration for the design of the main façade.
 
-Delivered in a lecture on 21 January 1910 to the Vienna Akademischer Verband fur Literatur und Musik
+    \centering % Center the image and caption within the mdframed box
+    \includegraphics[width=0.7\linewidth]{./figures/caricature_loos.jpg} % Adjusted to \linewidth for consistency within the box
+    \captionof{figure}{\textit{"Kunstbrütend ging der Modernste durch die Stassen. Plötzlich blieb er erstarrt stehen. Er hatte gefunden was er solange vergeblich gesucht: Die neue Fassade: Los von der Architektur!"} (en: "Artfully brooding, the most modern one walked through the streets. Suddenly, he stopped, frozen. He had found what he had long sought in vain: The new facade: Free from architecture!"). Contemporary caricature of Adolf Loos, published 1911 in the Viennese newspaper \textit{Illustrirtes Wiener Extrablatt}.}
+    \label{fig:caricature_loos}
+\end{mdframed}
 
-Some words on Adolf Loos
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.7\textwidth]{./figures/caricature_loos.jpg}
-  \caption{\textit{"Kunstbrütend ging der Modernste durch die Stassen. Plötzlich blieb er erstarrt stehen. Er hatte gefunden was er solange vergeblich gesucht: Die neue Fassade: Los von der Architektur!"}, contemporary caricature of Adolf Loos, published 1911 in the Viennese newspaper "Illustrirtes Wiener Extrablatt".}
-  \label{fig:caricature_loos}
-\end{figure}
-
+\subsection{Ornament and Crime (Adolf Loos, 1910)}
 
 In the womb the human embryo passes through all the development stages of the animal kingdom. At the moment of birth, human sensations are equal to those of a newborn dog. His childhood passes through all the transformations which correspond to the history of mankind. At the age of two, he sees like a Papuan, at four, like a Teuton, at six like Socrates, at eight like Voltaire. When he is eight years old, he becomes aware of violet, the colour which the eighteenth century had discovered, because before that the violet was blue and the purple snail red. Today the physicist points to colours in the sun’s spectrum which already bear a name, whose recognition, however, is reserved for the coming generation.
 
@@ -146,5 +142,157 @@ My shoes are covered all over with ornaments, which result from notches and hole
 I preach to the aristocrats. I allow decoration on my own body, if it provides a source of pleasure for my fellow men. Then they are also my pleasures.1 suffer the ornament of the Kafir, that of the Persian, that of the Slovak farmer’s wife, the ornaments of my cobbler, because they all have no other means of expressing their full potential. We have our culture which has taken over from ornament. After a day’s trouble and pain, we go to hear Beethoven and Wagner. My cobbler cannot do that. I must not rob him of his pleasures as I have nothing else to replace them with. But he who goes to listen to the Ninth Symphony and who then sits down to draw up a wallpaper pattern, is either a rogue or a degenerate.
 
 The absence of ornament has raised the other arts to unknown heights. Beethoven’s symphonies would never have been written by a man who walked around in silk, velvet and lace. The person who runs around in a velvet suit is no artist but a buffoon or merely a decorator. we have become more refined, more subtle. Primitive men had to differentiate themselves by various colours, modem man needs his clothes as a mask. His individuality is so strong that it can no longer be expressed in terms of items of clothing. The lack of ornament is a sign of intellectual power. Modern man uses the ornament of past and foreign cultures at his discretion. His own inventions are concentrated on other things.
+
+\clearpage
+\section{Architecture and Neuroaesthetics}
+
+\begin{mdframed}[linewidth=1pt, roundcorner=5pt, innerleftmargin=10pt, innerrightmargin=10pt, innertopmargin=10pt, innerbottommargin=10pt, linecolor=black, backgroundcolor=white, userdefinedwidth=\textwidth]
+    To better understand the intellectual dimension of the early modern movement against traditional architecture, it is essential to examine the writings and theories of its key figures, particularly those who challenged the prevailing aesthetic norms. Perhaps most well known among those is \textit{Ornament und Verbrechen} \cite{loos_ornament_1908} (en: "Ornament and Crime"). This short essay was originally delivered as a lecture to the Vienna-based \textit{Akademischer Verband fur Literatur und Musik} on 21 January 1910 by Austrian architect Adolf Loos. His most well-known work in Vienna, the mixed-use \textit{Looshaus}, stands in stark contrast to the famous \textit{Secessionsgebäude} completed only some 20 years earlier. With it, Loos pioneered the use of reinforced concrete in an otherwise brick-built city. A controversial design, even in its own time, it famously omitted the lavish ornamental decorations otherwise used on both representative and residential buildings of the city. \cref{fig:caricature_loos} shows a contemporary caricature speculating on Loos' inspiration for the design of the main façade.
+
+    \centering % Center the image and caption within the mdframed box
+    \includegraphics[height=4.75cm]{figures/beautyscale_image.png}
+    \includegraphics[height=4.75cm]{figures/beautyscale_heatmap.png}
+    \captionof{figure}{Left: Two designs for a building facade. Right: A heatmap reveals the degree to which the two different facade designs capture the attention of study participants. The heatmap was generated from eye-tracking data. As expected, the feature-rich pillar capital and lower-side cornice of the right facade retains visual attention to a much higher degree. Source: Figure 6 from Lavdas' and Salingaros' seminal publication \textit{"Architectural Beauty: Developing a Measurable and Objective Scale"}}
+    \label{fig:caricature_loos}
+\end{mdframed}
+
+\subsection{Architectural Beauty: Developing a Measurable and
+Objective Scale}
+
+(...) Lost among the heated and partisan media debate, a confluence of events occurred
+that signals a paradigm shift. An independent Harris Poll revealed overwhelming pub-
+lic preference for traditional versus modernist US federal buildings [13]. The pollsters
+were able to show that this preference in no way depends upon political party affiliation.
+Two separate groups of researchers verified the results of the Harris Poll with either direct
+eye-tracking experiments, or eye-tracking simulation software [14,15]. Brandon Ro used vi-
+sual attention software by 3M Corporation, while Ann Sussman measured eye movements
+on webcams while subjects viewed the images on a computer screen. Evaluating the same
+set of comparison image pairs from the Harris Poll, both research groups found complete
+agreement with the survey results.
+
+Several architectural organizations are trying to convince politicians to support bi-
+ologically based objective beauty, and to block the wanton destruction of historical ur-
+ban fabric that exemplifies those desirable qualities. One of these is Le Table Ronde de
+l’Architecture in Belgium [16]. Co-author NAS is a signatory of their declaration. The
+umbrella non-governmental organization The Architectural Uprising is active in the Baltic
+and Scandinavian countries as well as in the United Kingdom [17], and its branches survey
+the most beautiful versus ugliest new buildings in each country.
+
+Psychologists have used numerical scales to measure beauty, starting with Gustav
+Fechner in the 19th century [18]. We have hypothesized a method that could prove to be
+useful if other researchers rigorously tested the methodology, and provide documentation
+for the underlying assumptions and theories that drive the research hypothesis, design,
+and execution, using established research protocols.
+
+\subsection{Biologically Based Objective Beauty}
+
+Medical practitioners are belatedly realizing that architectural culture’s dominant,
+ingrained aesthetic is not compatible with laboratory measurements indicating salutogenic
+environments [31–38]. The established approach to design undermines recent trends in
+using the environment to significantly aid in healing. This effort includes, but is not limited
+to, biophilic effects of human health. The healthcare profession does not know how the
+curriculum for training architects omits any discussion of the opposing valence sets of
+sensory qualities linked to beauty. Students are conditioned to disengage from neurological
+responses occurring in their own bodies, which is the reason why they—as practicing
+architects—later have such a psychological resistance to diagnosing objective beauty in the
+designed environment [39].
+
+Going beyond generic design minimalism that lacks biophilic healing properties, the
+architecture profession imitates pathological conditions. Trauma survivors can lose their
+ability to process complex visual detail: yet a visually empty and featureless building delib-
+erately banishes ordered architectural detail. Depressingly grey minimalistic design styles
+mimic pathologies of the eye-brain system such as cataract, Carbon Monoxide poisoning,
+cerebral achromatopsia, cortical lesions, macular degeneration, retinal detachment, and
+visual agnosia [40] (Chapter 4). This medically inexplicable choice generates anxiety in
+users; however, it advocates a preferred and subjective architectural aesthetic.
+
+Substantial evidence exists for the effect that stress, and stressful urban environments,
+have on facial beauty [41]. A combination of stressors, mainly visual, affect the entire
+body, altering facial features so that they are perceived as being “uglier” than normal (a
+relative, not absolute measure), summarized as “stress induces ugliness”. However, also
+the other way around: ugliness induces stress. Experiments to establish the dual effect
+use medical evidence to measure stress, but the tools for measuring “ugliness” need an
+objective method of measuring architectural beauty.
+It turns out that ugliness in the visual environment induces facial stress in the observer,
+which manifests in measurable though non-obvious facial features. AI-based programs discover the effect that environmental stress has by generating ugliness in a person’s
+face, which reciprocates with ugliness in the built environment generating stress in the
+human body.
+
+Current technology makes possible computer-based facial expression recognition.
+Among several companies offering diagnostic products for facial expression analysis,
+iMotions and Noldus companies have established commercial platforms [42,43]. These
+similar tools sense how detailed facial features respond to an image and use AI to infer
+the unconscious emotional responses. The method “reads” facial muscle activity, which
+evolution has specialized for expression. Affectiva company (owned by Smart Eye, which
+also owns iMotions) is pioneering emotion AI software that measures human emotions
+and complex cognitive states by supplementing facial movements with other biometric
+sensors [44].
+The capability of measuring environmental ugliness indirectly through physiological
+sensors represents a paradigm shift for design. Physiological stress induced by specific
+types of environmental information—which are identified as “ugly”—generates patholo-
+gies. This normally unnoticed mechanism of interacting visually with the environment
+goes beyond aesthetics, to influence human health. We expect forthcoming experiments to
+unambiguously support quantitative methods of ranking architectural beauty. The existing
+applications are to fine art, however, and not architecture.
+
+\subsection{Why the Beauty Scale Generates Cognitive Dissonance in Architects}
+
+Beauty does lie in the eye of the beholder, but this does not mean that it is arbitrarily
+defined on a subjective basis [94]. Architects have trouble with the beauty scale as a
+consequence of their training, and voice an opposite opinion from their built-in biological
+instincts. Asking the beauty-scale question sparks cognitive dissonance since modernist
+tradition teaches a predisposition that reverses unconscious responses. Architects are
+taught a subjective set of aesthetics, and at the same time, they have to suppress their
+innate sensory experience in favor of a learned preference. Fear—influenced by aesthetic
+opinions based on group preference—sabotages the sensory basis for judging something
+on the beauty scale.
+
+Conditioned architects keep their neurological responses in check when identifying
+dehumanizing grey concrete surfaces as “beautiful” [95]. They automatically rate a rough
+Brutalist wall at 10, even though their own body tells them it’s depressing and repul-
+sive, hence rating a 0. This tension produces cognitive dissonance [96]. At the high end
+of the beauty scale, color, organized complexity, and ornament cause anxiety for PTSD
+(Post-Traumatic Stress Disorder) and autistic subjects, who seek psychological relief in
+minimalist environments. Ann Sussman suggests that signs of Autism Spectrum Disorder
+(ASD) and PTSD after WWI in the pioneers of modernist architecture could help explain
+diminished ability to process complex visual stimuli — including an aversion to face-like
+symmetries [55,97,98]. Neurotypical architecture students are imbued with those pref-
+erences, compelling them to score a building at 0 that actually ranks a 10 in biological
+terms [39,40,96].
+
+Architectural education uses operant conditioning to achieve the unnatural goal of
+devaluing biological beauty. Confronted with “approved” styles with minimal values
+of objective beauty, students are rewarded for propagating them, and become afraid of
+their own innate ability to feel pleasure from sources of coherent complex information. As
+Brielmann and Pelli [18] showed, an experience of beauty occurs when pleasure is high
+and is unlikely to occur when little pleasure is felt. Therefore, suppressing pleasure is a
+necessary prerequisite to suppressing biologically based beauty. The inability to experience
+pleasure is called anhedonia. Architects are taught emotional cutoff: to be unreceptive to
+visceral pleasure coming from the environment.
+
+The neurological pathways that encode valences (i.e., bad versus good emotional
+associations) are known. It is possible to reverse valences established through memory:
+conditioning achieves a valence switch [99]. In Brave New World, Aldous Huxley describes
+babies being conditioned to hate flowers and pretty images of animals, so as “to abolish
+the love of nature” [100]. For the past century, architectural education has focused on
+training exercises that achieve emotional numbing with respect to the environment, as a
+means to switch valences [39]. Prior conditioning explains why design professionals show
+insensitivity to the feelings of users inhabiting their work.
+
+\clearpage
+\section{Architecture and Democracy}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/thumbnail_interview.jpg}
+    \href{https://youtu.be/a9uLNxyKgCE?si=srT0AzgzI3LR4ccr}{Michael Diamant: The Origins of the Uprising}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/thumbnail_uprising.jpg}
+    \href{https://youtu.be/NTGQ_kITzmY?si=yEBpKZUstUKUUOqp}{"The Revolution Changing Architecture"}
+\end{minipage}
 
 \end{document}
