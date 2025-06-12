@@ -13,14 +13,20 @@
 ]{geometry}
 
 % header size
-\titleformat*{\section}{\large\bfseries}%{\thesection.}{\hspace{0cm}}{}
-\titleformat*{\subsection}{\normalsize\bfseries}%{\thesection.}{\hspace{0cm}}{}
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
 \titleformat*{\subsubsection}{\normalsize\bfseries}
 \titleformat*{\paragraph}{\normalsize\bfseries}
 \titleformat*{\subparagraph}{\normalsize\bfseries}
 
 % custom headers
 \usepackage{fancyhdr}
-\pagestyle{fancy} % custom headers and footers
-\setlength{\headheight}{15pt} % height of header
-\setlength{\headsep}{10pt} % separation between header and main text
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.4pt} % Keep header line
+\setlength{\headheight}{15pt}
+\setlength{\headsep}{10pt}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\subsectionmark}[1]{}
