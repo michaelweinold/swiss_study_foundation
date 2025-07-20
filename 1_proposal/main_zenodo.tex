@@ -271,7 +271,13 @@ Several methodologies have been suggested to incorporate the values of a diverse
 \begin{figure}[ht!]
     \centering
     \subfloat{{\includegraphics[height=4cm]{figures/vienna_1.jpg} }}
-    \subfloat{{\includegraphics[height=4cm]{figures/vienna_2.jpg} }}
+    \subfloat{{
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (7.48cm, 4cm); % Width based on aspect ratio (5143/2751 ≈ 1.8699) at height=4cm
+            \fill[white] (0,0) rectangle (7.48cm, 4cm); % White background
+            \node at (3.74cm, 2cm) [text width=6.98cm, align=center] {Image not shown for copyright reasons. See \href{https://www.wienschauen.at/schoenbrunner-strasse-211\%E2\%80\%8B-abriss-neubau/}{\textit{Schönbrunner Strasse 211: Neubau nach Abriss}} by Georg Scherer.}; % Centered text with padding, escaped URL
+        \end{tikzpicture}
+    }}
     \caption{Before-and-after: Demolition and reconstruction of a 19th century Gründerzeit style Vienna town house on Schönbrunner Strasse (12th District), as documented by Georg Scherer of the architecture watchblog \texttt{wienschauen.at} \cite{scherer_zerstorung_nodate}. Image sources (left to right): \cite{scherer_schonbrunner_2018}\cite{wikimedia_commons_user_guentherz_wohnhaus_2014}}
     \label{fig:vienna}
 \end{figure}
@@ -279,9 +285,21 @@ Several methodologies have been suggested to incorporate the values of a diverse
 
 \begin{figure}[ht!]
     \centering
-    \subfloat{{\includegraphics[height=4cm]{figures/hungary_1.jpg} }}
-    \subfloat{{\includegraphics[height=4cm]{figures/hungary_2.jpg} }}
-    \caption{Before-and-after: Demolition and reconstruction of a 1970s office building on Kossuth Lajos Square in Budapest, adjacent to the Hungarian Parliament Building, as documented by Michael Diamant of the architecture watchblog \texttt{newtrad.org}. The brutalist style design was intended to replace the unrealized wing of an earlier neo-classical style building. This wing was finally constructed according to the original design following the demolition of the 1970s building. Image sources: Adapted from original photographs by Michael Diamant in \cite{natalia_michael_2021} }
+    \subfloat{{
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (7.48cm, 4cm); % Width based on aspect ratio (5143/2751 ≈ 1.8699) at height=4cm
+            \fill[white] (0,0) rectangle (7.48cm, 4cm); % White background
+            \node at (3.74cm, 2cm) [text width=6.98cm, align=center] {Image not shown for copyright reasons. See \href{https://index.hu/urbanista/2015/12/16/eredmenyt_hirdettek_a_kossuth_teri_mtesz-szekhaz/}{\textit{Ilyen most. Milyen lesz az átalakítás után?}} by Zubreczki Dávid.}; % Centered text with padding
+        \end{tikzpicture}
+    }}
+    \subfloat{{
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (7.48cm, 4cm); % Width based on aspect ratio (5143/2751 ≈ 1.8699) at height=4cm
+            \fill[white] (0,0) rectangle (7.48cm, 4cm); % White background
+            \node at (3.74cm, 2cm) [text width=6.98cm, align=center] {Image not shown for copyright reasons. See \href{https://pestbuda.hu/cikk/20190829_szepul_a_hultl_fele_haz_a_parlament_leendo_irodahaza_a_kossuth_teren}{\textit{A Kossuth téren felépített új parlamenti irodaház az 1928-ban tervezett homlokzattal}} by Both Balázs.}; % Centered text with padding
+        \end{tikzpicture}
+    }}
+    \caption{Before-and-after: Demolition and reconstruction of a 1970s office building on Kossuth Lajos Square in Budapest, adjacent to the Hungarian Parliament Building, as documented by Michael Diamant of the architecture watchblog \texttt{newtrad.org}. The brutalist style design was intended to replace the unrealized wing of an earlier neo-classical style building. This wing was finally constructed according to the original design following the demolition of the 1970s building. Image sources: Adapted from original photographs used by Michael Diamant in \cite{natalia_michael_2021}}
     \label{fig:budaptest}
 \end{figure}
 
