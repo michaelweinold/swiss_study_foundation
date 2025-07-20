@@ -1,0 +1,485 @@
+\documentclass{article}
+
+\input{../_auxiliary/preamble/1_preamble_functionality_main.tex}
+\input{../_auxiliary/preamble/2_preamble_layout_report.tex}
+
+\usepackage[
+    backend=biber,
+    style=ieee
+]{biblatex}
+\addbibresource{references.bib}
+\input{../_auxiliary/preamble/1_preamble_functionality_bibliography.tex}
+
+\input{../_auxiliary/preamble/4_preamble_tikz_symbols}
+
+\renewcommand{\contentsname}{\centering Contents} % https://tex.stackexchange.com/a/308207
+\usepackage[titles, subfigure]{tocloft} % https://tex.stackexchange.com/a/336618
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % https://tex.stackexchange.com/a/271942
+
+\usepackage{censor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% document metadata
+\title{Proposal for a Summer Academy \protect\\ on Biophilic Design in Architecture}
+\author{Michael P. Weinold$^1$, Philippe Schultheiss$^1$, Mark C. Ballandies$^2$}
+\date{
+    $^1$Schweizerische Studienstiftung \\
+    $^2$Stiftung der Deutschen Wirtschaft \\[3mm]
+    October 2023 \textit{(available online July 2025)}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\section*{\centering Authors}
+\vspace{-10mm}
+
+% https://tex.stackexchange.com/a/244104/
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-1.2cm,yshift=+3.2cm] at (current page.south east) {\includegraphics[height=8cm]{./figures/dandelion.jpg}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[xshift=-10.3cm, yshift=+0.75cm, font=\small] at (current page.south east) {\textit{two dandelions of the genus Taraxacum, most often associated with the archetype of flowers springing from concrete}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[xshift=-10.3cm, yshift=+26cm, font=\small] at (current page.south east)
+    {
+    \href{https://doi.org/10.5281/zenodo.14575784}{\texttt{doi:10.5281/zenodo.14575784}}
+    \hspace{3cm} \href{https://creativecommons.org/licenses/by/4.0/deed.en}{Under a Creative Commons Attribution 4.0 License}
+    };
+\end{tikzpicture}
+
+\textbf{\textit{Michael P. Weinold}} (born 1995 in Innsbruck, Austria) is a doctoral researcher at ETH Zurich and the Paul Scherrer Institute. His background is in engineering physics, with degrees from Vienna University of Technology and ETH Zurich. His current research is focused on accelerating innovation in novel clean-energy technologies. He builds mathematical models and open-source software to better help decision makers assess the environmental impact of different techno-economic scenarios for decarbonizing the economy. Since 2023, he is a guest lecturer at the Department of Mechanical Engineering of ETH Zurich. His interest in aesthetics in the built environment was sparked during his research at the University of Cambridge, where he was introduced to the legacy of the late British philosopher Sir Roger Scruton. Since that time, he has been most interested in how new neuro-scientific insights can enable citizen movements to positively shape public spaces.
+
+\textbf{\textit{Philippe Schultheiss}} (born 1984 in Basel, Switzerland) is a consultant and soon-to-be pastor in the Swiss Reformed Church. He holds undergraduate degrees in Business \& Economics from the university of Basel as well as a master's degree in Medieval Philosophy from the university of Freiburg i.Ue. He is now an alumnus of the Swiss Study Foundation, where he is still active as a member of the Assessment Jury as well as a frequent host of events. He has been interested in politics, especially the areas of environmental and urban planning, since his days at the cantonal school at Schaffhausen. He went on to co-found the Green-Liberal Party in his home canton and remained involved in local politics after his relocation to Zurich, where, in 2020, he was elected president of the Parliament of the Reformed Church Zurich. This community of more than 70'000 members administers dozens of church buildings. Hence his motivation to contribute to a prospective and socially beneficial real estate strategy.
+
+\textbf{\textit{Mark C. Ballandies}} (born 1991 in Burgwedel, Germany) is a postdoctoral researcher in the Computational Social Science group at ETH Zurich, where he is exploring decentralised, bottom-up and community-owned solutions to complex societal challenges. In addition, he is involved in the startup WiHi that uses a decentralized network of stations to improve weather and climate predictions. He is the co-founder of DAOSuisse, a lecturer at the Vorarlberg University of Applied Sciences, an alumnus of the Foundation of German Business, president of education matters e.V. and initiator of the Smarte Dörfer association. In 2019, Mark discovered the beauty of old farmhouses and their effectiveness in combating environmental challenges when he began restoring a half-timbered house in his home village, using ecological, locally sourced and recyclable building materials such as wood, clay and hemp. He found that these farmhouses integrate values such as circularity, sustainability and locality into all aspects and details of their design and construction, resulting in unique, sustainable and liveable architecture. This discovery inspires him in his daily work, which he enjoys sharing with others.
+
+\clearpage
+
+\tableofcontents
+
+\section*{\centering Administrative Information}
+
+\begin{NiceTabularX}{\textwidth}{llX}
+\textit{Author} & \textit{Email} & \textit{Phone} \\
+\hline
+Michael P. Weinold & \censor{\texttt{michael@weinold.ch}} & \censor{\texttt{+41 75 500 70 70}} \\
+Philippe Schultheiss & \censor{\texttt{phschultheiss@protonmail.ch}} & \censor{\texttt{+41 79 768 53 15}} \\
+Mark C. Ballandies & \censor{\texttt{bcmark@protonmail.com}} & \censor{\texttt{+41 78 899 87 85}}
+\end{NiceTabularX}
+
+\begin{NiceTabularX}{\textwidth}{lllX}
+\textit{Revision} & \textit{Date} & \href{https://github.com/michaelweinold/latex_swiss_study_foundation}{\textit{Hash} \ExternalLink} & \textit{Comment }\\
+\hline
+1 & 12.10.2023 & \texttt{c57f656} & first full draft, sent out for feedback to PS and MCB \\
+2 & 23.10.2023 & \texttt{3fdf24e} & new draft with expanded \textit{Democracy} section \\
+3 & 25.10.2023 & \texttt{82181de} & version submitted to the Foundation
+\end{NiceTabularX}
+
+\section*{\centering Foreword}
+
+% The present proposal has been a long time in the making. The idea was born back in October 2021 when the Swiss Study Foundation first opened a call for proposals its annual Summer Academies. Only now did all of the authors find the time to commit to the time-consuming creative process that was still required to frame the topic, select potential speakers and draft a schedule for the event.
+
+During the development this proposal, the authors deemed it necessary to collect their thoughts in a structured way. While the authors of this proposal are aware that the call for proposals from August 2023 only called for a short description of the contents, they decided to embed this into a document providing additional context. The authors further believe the topic of this proposal is not only timely but of an international scope. English has therefore been adopted as the working language of the proposal.
+
+A concise description of the academy and the associated societal and academic context is provided in \cref{sec:abstract}. Further details and related resources are listed in \cref{sec:construction} - \cref{sec:biophilic}, which provide the context which has inspired the authors to develop the present proposal. The proposed schedule as well as additional information on the associated speakers is listed in \cref{sec:schedule}.
+
+
+\section{Abstract}
+\label{sec:abstract}
+
+\begin{minipage}{0.625\textwidth}
+
+We live in a time of unprecedented global construction activity. All major urban regions are experiencing strong growth, fuelled by the unabated population increase in some countries and increasing levels of migration in others. \\
+
+The construction sector is now responsible for more than 40\% of annual global carbon emissions. Since the majority of construction-related emissions are hard to abate, this number is expected to grow for the foreseeable future. Despite the urgency of reducing carbon emissions, new buildings are often designed with a service life of around 50 years only. At the same time, a growing number of opinion polls point toward a deep-rooted dissatisfaction among the general population with the modernist style in which the majority of buildings is now designed. This is supported by a number of recent neuro-scientific experiments. \\
+
+This disconnect between the taste of architects and the general public is by no means a novel phenomenon and has been widely caricatured, as illustrated in \cref{fig:loewy}. However, recent work by contemporary philosophers, including Sir Roger Scruton \textit{"Why Beauty Matters"} and Alain de Botton \textit{"Why is the Modern World So Ugly?"} have re-invigorated public debate. \\
+
+Architects, from the founders of modernism to present day proponents of brutalist structures have repeatedly rejected calls for more traditional designs, instead aiming to "re-educate" the public through their designs. With architecture often likened to \textit{a gallery you can't walk out of}, citizen initiatives have formed, all asking the question: "How can we ensure our cities do not become mazes of concrete and glass? \\
+
+In light of these bleak developments, cognitive scientists, citizen initiatives and a select group of architects and designers have pointed to \textit{biophilic design} as a tangible remedy to the featureless façades that have come to dominate real estate projects in recent decades. Building design inspired by nature, in both the aesthetic and the functional dimension, has the potential to significantly improve the wellbeing of citizens while reducing the environmental footprint of construction. \\
+
+We propose to invite a group of speakers that, through their academic or professional work, are shaping the current conversation around architecture, beauty and nature. The participants of the academy will learn why architects came to believe that \textit{béton brut} was the material of the future, what the real environmental footprint of modern construction is, if and how we can ever hope to quantify the aesthetics of a building, how we can learn from nature to build better, how citizen action can help shape the (un-)built environment $\dots$ and so much more.
+
+\end{minipage}\hspace{15mm}
+\begin{minipage}{0.325\textwidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (50mm, 188.06mm); % Width 50mm, height based on aspect ratio
+            \fill[white] (0,0) rectangle (50mm, 188.06mm); % White background
+            \node at (25mm, 94.03mm) [text width=45mm, align=center] {Figure not shown for copyright reasons. \\ See \textit{Evolution Chart of Design - 1930} on page 76 in "Industrial Design" by Raymond Loewy (1979), \texttt{ISBN 9789029529150}.}; % Centered text with padding
+        \end{tikzpicture}
+        \caption{
+            "Design Evolution 1930" by French-born American industrial designer Raymond Loewy \cite{loewy_industrial_1979}
+        }
+        \label{fig:loewy}
+    \end{figure}
+\end{minipage}
+
+\clearpage
+\section{The Age of Construction}
+\label{sec:construction}
+
+\begin{multicols}{2}
+
+Recent data collected by the International Energy Agency shows that the construction of new buildings is expected to add a floor area equivalent to the surface of the city of Paris every week all the way through 2050 \cite[Sec. 3.7]{cozzi_net_2021}.
+
+At the same time, the urban planning offices of several European countries expect and plan for an average service life of newly constructed buildings on the order of only 50 years. The exact lifetime depends on a number of factors, including the purpose of the structure (data for Denmark: 100 years for single-family homes, 75 years for cultural buildings and 50 years for health or teaching buildings \cite{andersen_lifespan_2023}). Further significant differences between the age of the building stock between different countries exist, with buildings in France having a significantly shorter lifetime \cite{noauthor_value_2013} than those in Switzerland \cite{kornmann_service_2012}.
+
+An in-depth investigation of the underlying reasons for the short service life of the majority of the building stock remains an area of active research. In the context of this proposal, we will mention only two:
+
+The first reason is the changing demand structure in the context of residential buildings. Ongoing societal transformations have driven a continuing trend towards fewer children per family and an increase of single-person households. This trend is illustrated in \cref{fig:households}.
+
+New construction of residential buildings is therefore seen as an opportunity to increase urban density by catering to smaller households, avoiding often equally expensive large-scale structural modifications of existing building stock. This trend is so significant that despite low birth rates in industrialized nations, the number of households has grown significantly, even without accounting for migration \cite{noauthor_why_2014}.
+
+It should be noted that the degree of bi-directional causality between an increasing supply of smaller dwellings and family size in the advanced state of this trend has not been conclusively investigated \cite{kulu_fertility_2007}. For instance, the 2021 edition of the U.S. Census Bureau American Community Survey showed fertility rates for occupants of single-family homes to be significantly larger than occupants of apartment buildings \cite{noauthor_american_2021}. Decreasing the supply of larger dwellings on the housing market could induce a feedback loop, whereby the decreasing space of apartments decreases statistical fertility, necessitating even more new construction.
+
+\end{multicols}
+
+\begin{figure}[ht!]
+    \includegraphics[width=\textwidth]{./figures/household_size.pdf}
+    \vspace{-5mm}
+    \caption{
+        Average household size for different countries between 1600 and 2000. Each point represents data obtained during the census of the corresponding year. The figure illustrates how the average number of people living in a household has been shrinking in developed countries for centuries, with the pace of this change accelerating in the early 1900s. A statistical analysis of the data by the authors of the original study shows 
+        a significant change in the trend of household size for developed nations around the year 1893. The authors concluded: \textit{"the number of households grew faster than population size in every country and every time period."}. Figure source: Own rendering, with data adapted Mason et al. \cite[Figure 2]{bradbury_long-term_2014}
+    }
+    \label{fig:households}
+\end{figure}
+
+\clearpage
+\begin{multicols}{2}
+
+The second reason lies in what has been perceived as "diminishing carbon emissions returns" associated with extending building service-life.
+
+The construction and maintenance of buildings in 2022 was responsible for 40\% of global carbon emissions \cite{camarasa_energy_2023}. Consequently, policy makers have been focusing on \textit{"accelerating and rapidly scaling up energy efficiency measures"} in the construction sector \cite{noauthor_2022_2022}. Researchers of the Intergovernmental Panel on Climate Change (IPCC) Working Group for Climate Change Mitigation recently re-affirmed the emissions reduction potential that the sector offered. Proposed measures include improving existing buildings efficiency and use, high-performance new buildings, integrating renewable energy production in buildings, and decarbonizing production of building materials \cite{shukla_mitigation_2022}.
+
+In this context, the energy expenditure and associated carbon emissions of the construction sector have recently come under increasing scrutiny from researchers in the field of industrial ecology, life-cycle assessment and sustainable construction \cite{chau_review_2015}\cite{ortiz_sustainability_2009}. A key finding is illustrated in \cref{fig:energy}: While extending the lifetime of buildings decreases the carbon emissions associated with its use, this effect naturally decreases over the lifetime of the building, as the recurrent carbon emissions from necessary refurbishment accumulate. Constructing an entirely new building to higher energy efficiency standards is therefore often seen as the preferable option for buildings over a certain age.
+
+This, of course, is a radical approach that is generally discouraged by many organizations in sustainable construction, like the World Green Building Council. The Council advocates for \textit{"Reducing the use of high-volume, carbon-intensive materials such as concrete, steel and plastics, and replacing them with low-carbon and circular alternatives (...)."} \cite[Sec. 7.4]{noauthor_2022_2022} but rightly notes that : \textit{"The most sustainable building is ironically, the one not built"}.
+
+Ultimately, many proposals to decarbonize the economy are challenging for technical and political reasons. These proposals have included a reduction of personal mobility, additional taxes on flights or the electrification of sectors with \textit{hard to abate} carbon emissions. At the same time, it seems that some of the most straightforward pathways remain unexplored - for instance: \textit{"Don't design houses for a 50 year service life."}.
+
+\end{multicols}
+
+\begin{figure}[ht!]
+    \includegraphics[width=\textwidth]{./figures/building_embodied_energy.pdf}
+    \vspace{-5mm}
+    \caption{
+        Life-cycle embodied energy of a single-floor detached house by building service life. The functional unit of the life-cycle assessment is the provisioning of the case-study building over a period of 150 years. A building lifetime of 15 years assumes that the house is torn down and rebuilt 10 times during the 150 year investigated timeframe. In this case, the figure show that the majority of energy is expended on the reconstruction ("Initial"). On the other hand, a building lifetime of 150 years assumes that house is never torn down in the investigated timeframe. In this case, the figure shows that the majority of the energy is expended on refurbishment and renovation ("Recurrent").
+        \newline Figure source: Own rendering, with data adapted from Rauf and Crawford \cite[Figure 5]{rauf_building_2015}
+    }
+    \label{fig:energy}
+\end{figure}
+
+\clearpage
+\section{The Age of Ugliness}
+\label{sec:ugliness}
+
+\begin{multicols}{2}
+    
+In 2021, Swiss-British philosopher Alain de Botton, best known for his \textit{"School of Life"} project, published an essay titled \textit{"Why is the modern world so ugly?"} \cite{howarth_why_2021}. He likens the development of modern architectural aesthetics to a “war on beauty”, in which a supposedly objective standard of attractiveness has been sacrificed at the altar of originality, resulting in built landscapes that not only violate their inhabitants’ supposedly natural sense of organic beauty, but also assault their mental wellbeing. The essay communicated ideas that Botton had developed in an earlier book \textit{"The Architecture of Happiness"}. The essay was promptly decried by contemporary architecture critics \cite{rogan_trads_2021}, albeit without presenting substantive evidence against Botton's main claims: That the majority of modern architecture was widely rejected by the general public. 
+
+This case-study replicates an established pattern in the present architectural community. Mounting evidence that the majority of buildings is perceived as \textit{ugly}, or at the very least \textit{not beautiful} by the public, followed by calls of architects to ignore the vulgar tastes of the public. 
+
+Three large-scale polls on architectural preferences have been conducted during the past ten years, all replicating the same result. A poll conducted by YouGov in the United Kingdom (sample size $>$1000) \cite{noauthor_yougov_2009}, a poll conducted by The Harris Poll in the United States (sample size $>$2000) \cite{noauthor_americans_2020} and a poll conducted by the Center for Urban and Real Estate Management of the University of Zurich (sample size $>$2000) \cite{hollenstein_schone_2022}. The polls all asked participants to choose between selected examples of traditional and modern designs. While the exact methodology varies between polls, all polls have taken care to correct for non-aesthetic considerations. Shown in \cref{fig:federal_buildings} is a sample from the U.S. poll.
+
+\end{multicols}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=5cm]{figures/us_gov_modernist_1.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/us_gov_traditional_1.jpg} }}
+    \caption{Left: The Robert C. Weaver Federal Building on 7th Street SW in Washington, D.C., designed in 1965 by Marcel Breuer. It presently serves as the headquarter of the United States Department of Housing and Urban Development. Note that the current occupancy of the building evokes Winston Churchill's famous quote: \textit{"We shape our buildings, thereafter they shape us."} \cite{noauthor_churchill_nodate}. Right: The William Jefferson Clinton Federal Building on Pennsylvania Avenue in Washington, D.C., designed in 1934 by William Adams Delano and Chester Holmes Aldrich. It presently serves as the headquarters of the Environmental Protection Agency. Images of this nature formed the core part of the 2020 American poll on architectural preferences \cite{noauthor_americans_2020}. All image pairs presented showed images of similar shape and purpose, thereby accounting for major non-aesthetic considerations. \newline Image sources (left to right): \cite{highsmith_robert_2012}\cite{wikimedia_commons_user_moreau1_epa_2018}}
+    \label{fig:federal_buildings}
+\end{figure}
+
+\clearpage
+\begin{multicols}{2}
+
+This issue was further elaborated by the late British philosopher Sir Roger Scruton in his influential movie \textit{"Why Beauty Matters"} \cite{scruton_why_2009}. Of course, this was only the latest in a long series of ceaseless and unresolved discussions and controversies on this topic in philosophy.
+
+We find similar discussions by philosophers from Plato (Symposium, ca. 370BC \cite{plato_symposium_1795}) to David Hume (Four Dissertations: On the Standard of Taste, 1757 \cite{hume_iv_1757}). To Plato, beauty was far from subjective - thereby a beautiful building would be one that has order, symmetry, proportion, harmony, and purpose, and that reveals the essence and goodness of the Form of Beauty. To Hume, beauty was not an inherent property of an object but purely subjective - a beautiful building would be one that pleases the taste of a true judge, who has a refined and cultivated ability to perceive and appreciate beauty, based on experience, comparison, and reflection.
+
+Neuroscience and psychology have only recently been able to contribute significantly to this debate. Research interest in the concept of beauty in architecture has increased exponentially over the past 20 years. Following a preliminary literature review, we found that the research, so far, has been conclusive:
+
+% \footnote{The Elsevier Scopus scientific publication database clearly shows this trend. A search query for publications exploring the relationship between beauty in architecture in the context of psychology and neurology shows an exponential increase: \texttt{TITLE-ABS-KEY((architecture AND beauty) AND (psycho* OR neuro*))}} 
+
+\textit{"Built spaces that facilitate a feeling of awe may have far-reaching positive effects on health and prosocial behaviors."} - Negami et al. (2023) \cite{negami_how_2023}
+
+\textit{"(Fractals) needs to reintegrate with biophilic and traditional architecture in urban design for their proven positive effects on health and well-being. Such beneﬁts include striking reductions in observers’ stress and mental fatigue."} \newline - Brielmann et al. (2022) \cite{brielmann_what_2022}.
+
+\textit{"Built environments that integrate representations of the natural world into façades and interiors benefit occupant psycho-physiological wellbeing and behavior."} - Berto et al. (2022) \cite{berto_biophilic_2022}
+
+\textit{"(...) greenery and other natural features in the built environment may improve mood (...) and accelerate recovery from stress and surgery.} \newline - Coburn et al. (2017) \cite{coburn_buildings_2017}
+
+This illustrates how, unperturbed by the intellectual debate on the exact ontological nature of beauty, large-scale scientific studies have advanced our understanding of the aesthetic features which endow the built environment with healing qualities. Initial results point to natural forms, which for millennia have inspired the design of man-made structures, and the many geometric forms that take inspiration from them. Absent in modernist designs, they permeate the facades of many historical buildings in Europe and beyond. Lavdas and Salingaros have gone furthest, proposing a methodology to determine what they boldly claim to be an \textit{"objective measure for beauty"}, hinted at in \cref{fig:heatmap}.
+
+\end{multicols}
+
+\begin{figure}[H]
+    \centering
+    \subfloat{{\includegraphics[height=4.75cm]{figures/beautyscale_image.png} }} \hspace{2.5mm}
+    \subfloat{{\includegraphics[height=4.75cm]{figures/beautyscale_heatmap.png} }}
+    \caption{Left: Two designs for a building facade. Right: A heatmap reveals the degree to which the two different facade designs capture the attention of study participants. The heatmap was generated from eye-tracking data. As expected, the feature-rich pillar capital and lower-side cornice of the right facade retains visual attention to a much higher degree. Source: Figure 6 from Lavdas' and Salingaros' seminal publication \textit{"Architectural Beauty: Developing a Measurable and Objective Scale"} \cite{lavdas_architectural_2022}}
+    \label{fig:heatmap}
+\end{figure}
+
+\clearpage
+\section{The Age of Democracy}
+\label{sec:democracy}
+
+\begin{multicols}{2}
+
+Switzerland is consistently ranked as one of the most democratic nations globally \cite{noauthor_economist_2023} with the principles of subsidiarity and direct democracy forming a vital part of Swiss national identity. And while the role of art in a free society remains a topic of philosophical debate, contemporary scholars agree that the role of art in democracy can be non-exhaustively defined as \textit{a mode of participation and action that engages the public in dialogue and debate, and that inspires social change and transformation}. Art thereby can be seen not only as the highest form of self-expression but also as a vital element of the democratic process, even more so in Switzerland.
+
+Architecture, however, unlike some of the fine arts, generally serves an immediate purpose beyond that of aesthetic or intellectual expression. In this way it can perhaps most graciously be described as adding to- and expanding on the functionality which civil engineers and workmen involved in any construction project aim to provide. This makes the designs of architects ubiquitous. As a result of this omnipresence in public space, it has been recognized as being
+
+\textit{"(...) the most overweening of the arts, and the one that least lets us alone. A gallery we can't walk out of, a book we can't close, an art we can't even turn our back on because it is there facing us on the other side of the street as well (...)} - British poet Blake Morrison in "Lords of Glass, Steel and Concrete" \cite{morrison_lords_1982}
+
+Meanwhile, the ability of individuals to actively participate or shape this \textit{art that we live in} \cite{hughes_shock_1980} remains fundamentally limited by two different factors: First, the lack of even the legal possibility to influence the aesthetics. Home ownership in Switzerland remains elusive for the majority of the population, having stagnated at around 40\% over the past decades \cite{noauthor_home_2022}. At the same time, the majority of rental properties are built, owned and managed by large corporations or pension funds \cite{noauthor_wem_nodate}. The owners, in the ever supply-constrained real estate market, therefore have little incentive to build aesthetically pleasing homes. Second, even for home owners, engaging in the art of architecture is a daunting financial prospect by virtue of the sheer physical and therefore monetary scale involved in any real estate project. This is especially true in highly dense urban environments. All this means that aesthetic decisions are therefore further removed from the public.
+
+If the public is so severely constrained in their ability to engage in a most public art form, one might think that at the very least, professional architects would design according to the aesthetic needs, or desires of the public. However, we have already shown in \cref{sec:ugliness} that a number of polls and scientific studies have all replicated the same finding: A cross-cultural rejection of the aesthetic language of modernism and the international style. 
+
+In fact, a self-understanding that was shared among the founding fathers of modern architecture, from Mies van der Rohe to Le Corbusier was that of the architect as the \textit{seer and sociological priest} \cite[Sec. 4]{hughes_shock_1993} that, through architecture, was to re-educate the public such that they might come to appreciate their brutalist or modernist designs. The modern version of this is perhaps best exemplified by the reaction of Corbu's Swiss compatriot Rudolf Guyer, who in 1955 designed a high-rise residential apartment in southern Zurich. When the building was voted "Switzerland's Ugliest Building" in 2018 by readers of the daily newspaper \textit{20 Minuten}, he declared:
+
+\textit{"Dass Laien das Gebäude hässlich finden, ist mir egal. Hauptsache, den anderen Architekten gefällt es."} (en.: I don't care that laypeople find the building ugly. The main thing is that the other architects like it.) - Rudolf Guyer \cite{noauthor_architekt_2018}
+
+% Contemporary architects came out to defend Guyer's work as well, stating that
+
+% \textit{"Grundsätzlich haben sie [Architekten] nicht die Pflicht, ihre Werke Laien schmackhaft zu machen (solange sie nicht als Bauherrschaft am Drücker sitzen). Problematisch wird es aber, wenn Fachverbände (...) an Fördertöpfe gelangen wollen. Diese werden auch durch die Steuergelder ignoranter Laien gefüllt."} (en.: In principle, they [the architects] have no obligation to make their works palatable to laypeople (as long as they are not in charge as the client). However, it becomes problematic when professional associations (...) want to acquire funding. This funding is also provided by the tax money of ignorant laypeople.) - Manuel Pestalozzi \cite{pestalozzi_hasslichkeit_2018}
+
+What does this reaction say about the relationship between art, architecture and democracy? We have seen that what is arguably the most inescapable form of public art is being rejected by the majority of the population, and the professional artists reject any notion of accountability to "ignorant laypeople". This questions is naturally multi-faceted, branching into economics, psychology and philosophy. The past years have seen the emergence of two different approaches:
+
+One the one hand, the formation of bottom-up citizen initiatives. This has been termed a "revolt against 'ugly' modern architecture" by some media \cite{gersten_scandinavian_2023} and has seen success in some Northern European countries. Watchblogs have been established to document the impact of modern architecture on traditional city centers. Examples are shown in \cref{fig:vienna} and \cref{fig:budaptest} for two cities that share a similar socio-economic and architectural legacy.
+
+On the other hand, the development of a trend in urban planning with roots in contemporary academic research on “value-sensitive design”. This approach takes ethics, law and culture of stakeholders into consideration, starting from the planning stage of (smart) cities. The driving force behind this approach is the inherent difficulty in finding a single solution for a given problem, such as minimizing carbon emissions, that reflects all needs of building participants with regards to values such as well-being, autonomy, freedom and sustainability \cite{helbing_ethics_2021}. A plurality of values must therefore to be taken into account and weighted against each other \cite{stiglitz_gdp_2020}.
+
+Several methodologies have been suggested to incorporate the values of a diverse set of stakeholders in the design process of systems, such as stakeholder analysis \cite{friedman_value_2019} and value-source analysis \cite{friedman_value_2019}.
+"Democracy by design" \cite{helbing_ethics_2021}\cite{helbing_democracy_2023} combines these methods from value-sensitive design and applies them to democracy by keep the human-in-the loop of important decision making in society. The key elements of this approach is the acknowledgement that every citizen should have the right to express their opinion on a system that affect them and be able to improve them \cite{helbing_ethics_2021}.
+\end{multicols}
+\vspace{-5mm}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=4cm]{figures/vienna_1.jpg} }}
+    \subfloat{{\includegraphics[height=4cm]{figures/vienna_2.jpg} }}
+    \caption{Before-and-after: Demolition and reconstruction of a 19th century Gründerzeit style Vienna town house on Schönbrunner Strasse (12th District), as documented by Georg Scherer of the architecture watchblog \texttt{wienschauen.at} \cite{scherer_zerstorung_nodate}. Image sources (left to right): \cite{scherer_schonbrunner_2018}\cite{wikimedia_commons_user_guentherz_wohnhaus_2014}}
+    \label{fig:vienna}
+\end{figure}
+\vspace{-5mm}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=4cm]{figures/hungary_1.jpg} }}
+    \subfloat{{\includegraphics[height=4cm]{figures/hungary_2.jpg} }}
+    \caption{Before-and-after: Demolition and reconstruction of a 1970s office building on Kossuth Lajos Square in Budapest, adjacent to the Hungarian Parliament Building, as documented by Michael Diamant of the architecture watchblog \texttt{newtrad.org}. The brutalist style design was intended to replace the unrealized wing of an earlier neo-classical style building. This wing was finally constructed according to the original design following the demolition of the 1970s building. Image sources: Adapted from original photographs by Michael Diamant in \cite{natalia_michael_2021} }
+    \label{fig:budaptest}
+\end{figure}
+
+
+\begin{comment}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=5cm]{figures/parkroyal_1.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/parkroyal_2.jpg} }}
+    \caption{The \textit{Parkroyal Collection Pickering} luxury hotel on Upper Pickering Street in Singapore, designed by members of the firm WOHA in 2013. Often described as a "garden in a hotel" \cite{hill_take_2021}, the building features multiple terrace gardens utilizing rainwater collection as part of its water management system. Left: Frontal view of the hotel from Hong Lim Park. Right: Detail of the concrete facade with solitary vegetation. Image sources (left to right): \cite{morin_hotel_2018}\cite{smu_constitutional_and_administrative_law_wikipedia_project_parkroyal_2013}}
+    \label{fig:parkroyal}
+\end{figure}
+
+\end{comment}
+
+\clearpage
+\section{A New Age of Biophilic Design}
+\label{sec:biophilic}
+
+\begin{multicols}{2}
+
+As we demonstrated with multiple excerpts from recent publications in \cref{sec:ugliness}, "biophilic design" in architecture has been frequently highlighted for its positive effects on the aesthetic experience, and by extension on the overall wellbeing, of study participants. Biophilic design is a novel term describing an age-old aspiration in architecture: to increase the connection between people and nature in the built environment. It is based on the idea that humans have an innate tendency to seek and appreciate natural elements, such as plants, animals, water, light, and shapes. Biophilic design uses \textit{direct nature, indirect nature, and space and place conditions} to create environments that are beneficial for human health, well-being, and sustainability \cite{kellert_practice_2015}. One example of the indirect use of nature is provided by the lavish floral ornamentation in Jugendstil (en.: Art Noveau) design. Perhaps the most well-known fully nature-inspired structure was the monumental arch of the 1900 Paris expo, as depicted in \cref{fig:porte_binet}, inspired by contemporary artistic depictions of microscopic life-forms shown in \cref{fig:kunstformen}.
+    
+\end{multicols}
+\vspace{-5mm}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=5cm]{figures/Spyroidea.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/Phaeodaria.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/Cyrtoidea.jpg} }}
+    \caption{Selection of drawings from Ernst Haeckel's \textit{Kunstformen der Natur} (en.: "Art Forms in Nature") \cite{haeckel_kunstformen_2012}. According to architect René Binet, these drawings served as direct inspiration for his monumental arch \cite[Sec. "Haeckel und der Jugendstil"]{willmann_haeckel_2019}, which is depicted in \cref{fig:porte_binet}. \newline Image sources (left to right): Spyroidea \cite{haeckel_kunstformen_1904}, Phaeodaria \cite{haeckel_kunstformen_1904} and Cyrtoidea \cite{haeckel_kunstformen_1904-2}.}
+    \label{fig:kunstformen}
+\end{figure}\vspace{-5mm}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=5cm]{figures/porte_photograph.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/porte_watercolor.jpg} }}
+    \caption{Two renderings of the \textit{Porte Binet}, a monumental entrance at the site of the 1900 Paris Exhibition, designed by René Binet. The structure was composed of a metallic network with embedded coloured glass elements covering over 3000 electric lamps. \newline Image sources (left to right): \cite{louis_porte_1900}, \cite{binet_projet_1898}.}
+    \label{fig:porte_binet}
+\end{figure}
+
+\clearpage
+
+\begin{multicols}{2}
+
+However, biophilic design can transcend the aesthetic dimension. While nature-inspired functional aspects of construction are often described under the term bio-mimicry, the difference is only semantic. \cref{fig:ventilation} shows what is perhaps the most famous example of functional bio-mimicry in the built environment: The design of building-scale ventilation systems based on the thermo-regulatory designs of termite mounds.
+
+We believe that biophilic design in its aesthetic dimension is an answer to the problems of denizen wellbeing highlighted in \cref{sec:ugliness}, while biophilic design in its functional dimension can help solve the challenges of sustainability in construction discussed in \cref{sec:construction}. 
+
+It would seem that the academic community is in agreement with our notions: The academic interest in biophilic design has been growing exponentially since 2012, some of which can likely be attributed to the term itself being "in fashion" \footnote{Compare the results of the Elsevier Scopus publication index for the search: \texttt{TITLE-ABS-KEY(biophilic AND design)}}. But will biophilic design emerge as a major new force, a new \textit{Strömung} (en.: architectural tendency), healing wounds that exposed concrete and steel have torn in the fabric of European cities? Will the use of natural materials be able to reduce the environmental burdens of the construction sector, or will architects simply adorn their designs with the odd tree here-and-there to make sure their designs don't look completely out of time? Will ornaments, inspired by forms of nature, once again bloom on the facades - or will real living plants grow on walls, balconies and terraces? Will new developments in neuroscience and psychology be able to help us design better, more beautiful buildings?
+
+It is in this context that we propose a schedule to host a Summer Academy. We believe this will be more than just interesting discussions. We will provide participants with the tools to think critically, to assess and to better understand.
+
+- MPW, PS, MCB
+
+\end{multicols}
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (7.792cm, 5cm); % Width based on aspect ratio (427/274 ≈ 1.5584) at height=4cm
+            \fill[white] (0,0) rectangle (7.792cm, 5cm); % White background
+            \node at (3.896cm, 2.5cm) [text width=7.292cm, align=center] {Image not shown for copyright reasons. See plan of Portcullis House in \textit{Hopkins2: the work of Michael Hopkins and Partners} by Colin Davies et al. (2001), \texttt{ISBN 978071483925}.}; % Centered text with padding
+        \end{tikzpicture}
+    }}
+    \subfloat{{
+        \begin{tikzpicture}
+            \draw[line width=1pt, black] (0,0) rectangle (7.792cm, 5cm); % Width based on aspect ratio (427/274 ≈ 1.5584) at height=5cm
+            \fill[white] (0,0) rectangle (7.792cm, 5cm); % White background
+            \node at (3.896cm, 2.5cm) [text width=7.292cm, align=center] {Image not shown for copyright reasons. See Figure 2 in \href{https://www.researchgate.net/publication/255650482}{\textit{Beyond biomimicry: What termites can tell us about realizing the living building}} by Scott Turner (2008).}; % Centered text with padding
+        \end{tikzpicture}
+    }}
+    \caption{Energy-efficient air-flow cooling inspired by the design of termite mounds. Left: Cross-section of the mounds of two different termite species, one with open air vents and one with a porous surface. Right: Cross-section of \textit{Portcullis House} on Bridge Street in London, designed by members of the firm Michael Hopkins and Partners in 1992. The tall chimneys form part of the termite-inspired air circulation system, utilizing the stack effect to create an updraft. \newline Image sources (left to right): \cite{turner_beyond_2008}, \cite{davies_hopkins2_2001}.}
+    \label{fig:ventilation}
+\end{figure}
+
+
+\clearpage
+\section{Proposed Schedule}
+\label{sec:schedule}
+
+\subsection{Day I - History of Architecture}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Samuel Leder \\
+\textit{Teaching Assistant} & Philippe Schultheiss \\
+\textit{Didactic Format} & Lecture and Discussion Groups
+\end{NiceTabular}
+
+\textit{To what degree is architecture political or ideological? How did the political upheavals of the early 20$^{\text{th}}$ century shape decades of buildings design to come? Which are the major trends in architectural design today - and how, if at all, do they interact? Students of engineering or the natural sciences often have only a limited understanding of the politics that shape the academic landscape at firms and academic architecture departments. On this day, the participants will be guided through two millennia of architectural history, with a specific focus on the origins of the modernist movement. It will provide important context for discussions on the following days.}
+
+\href{https://www.linkedin.com/in/samuel-leder/}{Samuel Leder \ExternalLink} is the program manager of the Urban Management course at the Center for Urban and Real Estate Management at the University of Zurich. Following his studies in architecture at ETH Zurich, he worked in a Basel-based architecture firm. He presently serves as co-president of the association \href{https://www.placemaking-switzerland.ch}{Placemaking Switzerland \ExternalLink}, where he drives the development of  community-based, livable, socially and ecologically sustainable settlement areas and neighborhoods. An alumnus of the Swiss Study Foundation, his discussion with the authors of this document have been instrumental in shaping the proposed framework.
+
+\subsection{DAY II - Sustainability in the Built Environment}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Dr. Martin Röck and Michael P. Weinold \\
+\textit{Teaching Assistant} & Mark C. Ballandies \\
+\textit{Didactic Format} & Computer-Based Interactive "Sustainability Lab" Group Work
+\end{NiceTabular}
+
+\textit{What is the environmental impact of a concrete-and-steel building? How does it fare against a clay-and brick building with wood beams and hemp insulation? How complex is a full life-cycle analysis of a construction project? Do we need expensive reports prepared by sustainability consultants, or can we a reasonable assessment ourselves? Where in the supply chain do emissions occur - which can we avoid and which will take decades to be fully decarbonized? The participants will learn about the fundamentals of environmental assessment and complete an interactive life-cycle analysis of two case-studies.}
+
+\href{https://www.linkedin.com/in/martinroeck/}{Dr. Martin Röck \ExternalLink} is a research associate at Delft University of Technology (Netherlands), where he has been developing a \href{https://github.com/mroeck/Embodied-Carbon-of-European-Buildings-Database}{large-scale database \ExternalLink}of the embodied carbon in the European building stock. His research is focused on  on improving climate and environmental performance of buildings at scale. He applies life cycle-based assessment methods, building information modelling and data science workflows to inform environmental benchmarking and target setting as well as to identify and promote effective building design strategies for advancing a regenerative development of spatial systems at large. Martin holds a Dual PhD in Architectural Engineering from KU Leuven and Engineering Sciences from TU Graz for which he has been awarded a DOC Fellowship by the Austrian Academy of Sciences.
+
+\begin{comment}
+
+\href{https://www.linkedin.com/in/romainsacchi/}{Dr. Romain Sacchi \ExternalLink} is a tenured researcher in the Technology Assessment Group at  Paul Scherrer Institute (Switzerland). During his postdoctoral research, he developed a powerful mathematical model for prospective environmental modelling that is now used widely in academia and industry. Before returning to academia, he gathered six years of experience in the environmental impact assessment of the construction sector, where he developed sustainability strategies.
+
+\end{comment}
+
+\clearpage
+\subsection{DAY III - Measuring Beauty}
+\label{subsec:day_3}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Dr. Alexandros A. Lavdas \\
+\textit{Teaching Assistant} & Michael P. Weinold \\
+\textit{Didactic Format} & Lecture and Discussion Groups
+\end{NiceTabular}
+
+\textit{Measure beauty? Quantify the aesthetic experience? What a preposterous idea! On this day, the participants will learn about new neurological discoveries that have deepened our understanding of what we perceive as beautiful in a building. The methods most frequently used in the scientific studies listed in \cref{sec:ugliness} will be elaborated. The participants will have the opportunity to interact with the foremost researchers of neuro-aesthetics, who only recently published their latest findings (cf. \cref{fig:heatmap}). This will provide participants with the methodological understanding required to fully appreciate the field trip planned for the last days of the academy.}
+
+\href{https://www.linkedin.com/in/alexandros-a-lavdas-9b127518/}{Dr. Alexandros A. Lavdas \ExternalLink} is a tenured senior researcher at Eurac Research Institute for Biomedicine in Bolzano (Italy), where an imaging laboratory was set up under his guidance in 2014. He is also currently serving as Head of Psychology at the Athens campus of Webster University, and is a member of the board of directors of the Human Architecture and Planning Institute (theHapi) in Concord, Massachusetts. He is among the most well-known researchers in neuro-aesthetics, having recently proposed a seminal method for the quantitaive measurement of architectural beauty \cite{lavdas_architectural_2022} (compare also \cref{fig:heatmap}). His research enables cell-level imaging that is fundamental for a better understanding of processes and mechanisms, both with regard to the emergence and development of diseases and the effect of drugs. He was previously with University College London, where he carried out research on cortical development, and later, at the Pasteur Institute in Athens, on injury and repair of the central nervous system.
+
+\subsection{DAY IV - A Return to Nature}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Carlo Battisti et al. \\
+\textit{Teaching Assistant} & Michael P. Weinold \\
+\textit{Didactic Format} & Lecture and Discussion Groups
+\end{NiceTabular}
+
+\textit{How can we learn from nature to improve not only the aesthetics of new buildings, but to affect a broader change toward sustainable construction? Will it be enough to plant trees on concrete and steel high-rises, or is this recent trend nothing but the latest large-scale attempt at green-washing in the construction sector? On this day, the participants will engage with one of the foremost thinkers of biophilic design who just recently completed work on a large international research project on sustainable construction.}
+
+\href{https://www.linkedin.com/in/carlobattisti/}{Carlo Battisti \ExternalLink} is the president of \href{https://www.living-future.eu}{\textit{Living Future Europe} \ExternalLink}, a non-profit organization that promotes biophilic design and regenerative development. He is also the founder and leader of the Biophilic Society, a network of biophilic design lovers and professionals. From 2017-2021, he was working with Eurac Research Institute in Bolzano, Italy as Chair and Project Manager of the EU COST Action 16114 "RESTORE" (REthinking Sustainability TOwards a Regenerative Economy). The aim of this research project was to affect a paradigm shift towards restorative sustainability for new and existing buildings and space design across Europe, through the collaboration of 160+ researchers from 40 European countries. He has a degree in Civil Engineering from the Polytechnic University of Milan and about twenty years of experience in construction companies.
+
+\clearpage
+\subsection{DAY V - Architecture and Democracy}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Michael Diamant \\
+\textit{Teaching Assistant} & Mark C. Ballandies \\
+\textit{Didactic Format} & Lecture and Discussion Groups
+\end{NiceTabular}
+
+\textit{How can citizens increase the degree of aesthetic autonomy in a time when the vast majority of building projects are commissioned by multinational financial corporations? How can the unique Swiss implementation of direct democracy be utilized to create more more stustainable, more beautiful and more livable places? In this session, the participants will have the opportunity to engage with someone who has already used citizen action to stop urban construction projects and "force achitects back to the drawing board" \cite{natalia_michael_2021}.}
+
+\href{https://newtrad.org/aboutme/}{Michael Diamant \ExternalLink} is a Swedish urban sociologist and activist who has created and promoted several online platforms for new traditional architecture and urbanism. He has a degree in society planning from Stockholm University. He is the founder of the blog \href{https://newtrad.org/}{New Traditional Architecture \ExternalLink}, as well as the co-founder of \href{https://www.arkitekturupproret.se}{Arkitekturupporet \ExternalLink} (en.: architecture revolt), a nonprofit organization that has  transformed the debate about architecture in Sweden, and spawned multiple local groups in Norway, Finland, Denmark, and other countries. He is a leading voice in the global movement for architectural reform and revival.
+
+\subsection{DAYS VI-VII - Field Work}
+
+\begin{NiceTabular}{W{l}{3cm}l}[]
+\textit{Primary Instructor} & Dr. Alexandros A. Lavdas with tech. assistance from Aladar Tepelea \\
+\textit{Teaching Assistant} & Michael P. Weinold, Philippe Schultheiss, Mark C. Ballandies \\
+\textit{Didactic Format} & Field-Trip with interactive Experiment and Data Analysis
+\end{NiceTabular}
+
+\textit{Milan is a city that harmonizes diverse architectural expressions and epochs, from the traditional to the contemporary, from the classical to the innovative. It is the perfect destination for the academy participants to explore the themes that were explored in the lectures and interactive sessions during the first part of the academy. With the help of mobile eye-tracking equipment, we will be able to determine in real time what effects different architectural styles of the built environments can have on our overall well-being and our visual attention. In Milan, the participants will be able to appreciate the splendor and refinement of Gothic cathedrals, Renaissance churches, and Baroque palaces, as well as the "practicality" of modernist skyscrapers, brutalist housing complexes, and newly erected biophilic towers, bursting with greenery. }
+
+For the vita of Dr. Alexandros A. Lavdas, compare \cref{subsec:day_3}.
+
+\href{https://www.linkedin.com/in/aladar-tepelea/}{Aladar Tepelea \ExternalLink} is an Austrian entrepreneur who manages two information technology startups. He has a background in business from Vienna University of Economics as well as extensive work experience with the foremost financial institutions in the United States and in Europe. His company \href{https://www.mindset-technologies.at}{\textit{Mindset Technologies} \ExternalLink} has developed eye-tracking software that can be used to "predict attention" in a number of different environments. The equipment is highly mobile and has already been used to understand where airline pilots focus their attention in the cockpit. With slight modifications, it can be used to re-create the experiments of Dr. Lavdas in a field experiment. 
+
+\begin{figure}[ht!]
+    \centering
+    \subfloat{{\includegraphics[height=5cm]{figures/milano_old.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/milano_ugly.jpg} }}
+    \subfloat{{\includegraphics[height=5cm]{figures/milano_biophilic.jpg} }}
+    \caption{A selection of well-known buildings from Milan (Italy), neatly representing the thematic arc we laid out in this proposal: From traditional via modernist/brutalist to biophilic architecture. From left to right: Main facade of Milan Cathedral, designed by Simone da Orsenigo in the 14$^\text{th}$ century, a widely recognized landmark of the city. High-rise structure housing part of the design school at the private \textit{IULM University of Milan} (like in \cref{fig:federal_buildings}, we note the inherent irony), designed by architects of the firm 5+1AAAlfonsoFemiaGianlucaPeluffo in 2014. "Bosco Verticale" (en.: vertical forest), one of two residential high-rises designed in 2009 by Stefano Boeri and colleagues. It has been described as \textit{"A house for trees inhabited by humans"} by the architect \cite{noauthor_bosco_2023}. Which of these will score highest on a neurology-based metric for aesthetic experience? We hope to find out! \newline Image sources (left to right): \cite{halun_facade_2011}, \cite{weinold_iulm_2023}, \cite{wikimedia_commons_user_frdr_bosco_2023}}
+    \label{fig:sagrada}
+\end{figure}
+
+\begin{comment}
+
+\begin{figure}
+    \centering
+    \subfloat{{\includegraphics[height=4.75cm]{figures/sagrada_facade.jpg} }}
+    \subfloat{{\includegraphics[height=4.75cm]{figures/sagrada_interior.jpg} }}
+    \caption{Exterior and interior views of the Gothic Revival/Art Nouveau/Modernista style Catholic church \textit{Sagrada Familia} (en.: "Holy Family") in Barcelona, Spain, designed by Antoni Gaudí from 1883 until his death in 1926. Left: Details of the ornament-laden archway above the main gate of the nativity facade. Right: Wide-angle view of the arboreal load-bearing pillars in the nave. \newline Image sources (left to right): \cite{mortel_sagrada_2016}, \cite{wikimedia_commons_user_t_meltzer_sagrada_2014}.}
+    \label{fig:sagrada}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \subfloat{{\includegraphics[height=4.5cm]{figures/hérémence_1.jpg} }}
+    \subfloat{{\includegraphics[height=4.5cm]{figures/hérémence_2.jpg} }}
+    \caption{Brutalist-style catholic church "St. Nicolas" in the Swiss mountain village of Hérémence, designed by Walter Maria Förderer in 1967. Image sources from left to right: Outside view \cite{bissegger_eglise_2018-1} and inside view \cite{bissegger_eglise_2018}.}
+    \label{fig:kunstformen}
+\end{figure}
+
+\end{comment}
+
+\clearpage
+\printbibliography
+
+\end{document}
